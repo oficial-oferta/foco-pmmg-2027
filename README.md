@@ -66,8 +66,14 @@ No app, perguntas autorais são identificadas como **Autoral · Foco PMMG 2027**
 - Salvamento de treinos incompletos e fila offline com sincronização posterior.
 - Histórico por assunto e análise semanal no admin.
 - Pontuação bônus de metas, simulados cronometrados e melhorias de acessibilidade.
-## Implantação de 01/11/2026
 
-Backend **exclusivo** criado em Supabase: `sjzsbcrvronnqoljzzro` (sa-east-1), com 500 questões importadas e função `manage-users` instalada. Frontend conectado à chave pública. O cadastro público não é oferecido pela interface; também é necessário desativar **Allow new users to sign up** no painel Auth do Supabase antes de convidar terceiros. O acesso a `questions` pela API está limitado a contas com papel `admin` ou `student` em `app_metadata` e perfil ativo. O site oferece uma demonstração local sem credenciais, sem acesso a contas reais.
 
-**Pendente de operação pelo proprietário:** ativar Pages em Settings → Pages → Source: GitHub Actions; criar primeiro usuário em Authentication → Users do Supabase, definir `app_metadata.role='admin'` no servidor (ver instrução acima). A conexão GitHub disponível não oferece endpoint para mudar Settings → Pages. Não declarar URL publicada nem credenciais de admin antes de confirmação real.
+## Atualização — Simulados Oficiais e Literatura geral (01/11/2026)
+
+- Aba **Simulados oficiais**: CFSd 2025 (aplicação 2024) e CFSd 2023 (aplicação 2023), com referência aos PDFs originais (sem reproduzir os enunciados no repositório), cartão de respostas por questão, 50 itens / 3 horas, gabarito oficial definitivo, anuladas e modo opcional sem Literatura histórica (45 questões).
+- Resultado da prova no Supabase, isolado por usuário, com cálculo de acertos no banco e histórico visível para o administrador. O gabarito pode ser consultado no navegador: é uma plataforma de treino, não avaliação protegida contra fraude.
+- As antigas 100 questões sobre *Vidas Secas* e *Campo Geral* foram desativadas, **sem apagar respostas anteriores**. Foram inseridas 100 questões autorais de literatura geral (conceitos, narrador, figuras de linguagem, gêneros) em revisão editorial. As obras cobradas no futuro edital 2027 deverão substituir essa seleção provisória.
+- Arquivos-fonte: `official-exams.js`, `supabase/official_simulados.sql` e `supabase/literatura_geral_v2.sql`.
+- PDFs e gabaritos consultados: https://arquivos.qconcursos.com/prova/arquivo_gabarito/121468/pm-mg-2024-pm-mg-soldado-gabarito.pdf (caderno 2025); https://vanguardamilitar.com/download/2392/ (gabarito final 2025); https://arquivos.qconcursos.com/prova/arquivo_prova/93633/pm-mg-2023-pm-mg-soldado-prova.pdf (caderno 2023); https://arquivos.qconcursos.com/prova/arquivo_gabarito/93633/pm-mg-2023-pm-mg-soldado-gabarito.pdf (gabarito 2023).
+
+**Importante:** PDFs estão hospedados por terceiros; o usuário pode abrir o documento em nova aba se a incorporação for bloqueada pelo navegador. As questões autorais do banco ainda precisam de revisão pedagógica.
