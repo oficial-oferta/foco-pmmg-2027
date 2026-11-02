@@ -77,3 +77,14 @@ No app, perguntas autorais são identificadas como **Autoral · Foco PMMG 2027**
 - PDFs e gabaritos consultados: https://arquivos.qconcursos.com/prova/arquivo_gabarito/121468/pm-mg-2024-pm-mg-soldado-gabarito.pdf (caderno 2025); https://vanguardamilitar.com/download/2392/ (gabarito final 2025); https://arquivos.qconcursos.com/prova/arquivo_prova/93633/pm-mg-2023-pm-mg-soldado-prova.pdf (caderno 2023); https://arquivos.qconcursos.com/prova/arquivo_gabarito/93633/pm-mg-2023-pm-mg-soldado-gabarito.pdf (gabarito 2023).
 
 **Importante:** PDFs estão hospedados por terceiros; o usuário pode abrir o documento em nova aba se a incorporação for bloqueada pelo navegador. As questões autorais do banco ainda precisam de revisão pedagógica.
+## V2 Premium — 02/11/2026
+
+- Níveis por XP **já obtido pelo servidor** (nenhum bônus artificial novo), medalhas calculadas a partir do histórico individual, calendário de 91 dias, missões diária/semanal e reforço por matéria.
+- **Modo Foco:** cinco questões com relógio de cinco minutos; ao terminar o tempo, o usuário pode concluir no próprio ritmo. Não apaga respostas.
+- **Radar histórico:** últimos sete dias, 30 dias e geral, com linha de evolução e assuntos com baixos percentuais após pelo menos duas respostas.
+- **Relatório Premium:** acertos, tempo médio, temas praticados e comparação com até três sessões anteriores. Tabela `training_sessions` no Supabase, preenchida por RPC segura com pontuação calculada a partir das tentativas já registradas.
+- Animações CSS rápidas e discretas, botões com resposta tátil, gráficos animados, celebrações de medalhas e acessibilidade `prefers-reduced-motion`.
+- Componentes de apresentação no arquivo `v2-premium.js`. **Não** alterar autenticação ou criar novos usuários na interface demonstrativa.
+- Migração aplicada no projeto Supabase exclusivo `sjzsbcrvronnqoljzzro`, disponível em `supabase/v2_premium_training_sessions.sql` para controle de versão.
+
+A V2 não altera as 500 questões autorais e os simulados oficiais existentes. O app continua independente e não oficial da PMMG.
