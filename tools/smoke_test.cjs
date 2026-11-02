@@ -27,5 +27,12 @@ vm.runInContext(script,context);
  for(let i=0;i<45;i++){await vm.runInContext('officialAction("sim-answer:A")',context);if(i<44)await vm.runInContext('officialAction("sim-next")',context)}
  await vm.runInContext('officialAction("sim-finish")',context);
  if(!app.innerHTML.includes('Simulado concluído')&&!app.innerHTML.includes('SIMULADO CONCLUÍDO'))throw Error('Resultado ausente');
- console.log('OK: home, treino, correção, XP, radar e simulado oficial com 45 itens. 500 questões ativas.');
+ // Teste da prova PMMG 2022 com 40 itens e sem Literatura antiga.
+ if(vm.runInContext('examById("pmmg-cfsd-2022").answers.length',context)!==40)throw Error('Prova 2022 incompleta');
+ await vm.runInContext('officialAction("sim-start:pmmg-cfsd-2022:integral")',context);
+ if(!app.innerHTML.includes('1 de 40'))throw Error('Simulado 2022 não iniciou corretamente');
+ for(let i=0;i<40;i++){await vm.runInContext('officialAction("sim-answer:A")',context);if(i<39)await vm.runInContext('officialAction("sim-next")',context)}
+ await vm.runInContext('officialAction("sim-finish")',context);
+ if(!app.innerHTML.includes('SIMULADO CONCLUÍDO'))throw Error('Resultado 2022 ausente');
+ console.log('OK: home, treino, correção, XP, radar e simulados oficiais de 45 e 40 itens. 500 questões ativas.');
 })().catch(err=>{console.error(err);process.exit(1)});
