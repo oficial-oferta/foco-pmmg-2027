@@ -1,0 +1,394 @@
+[
+  {
+    "id": "FP-0001",
+    "subject": "Português",
+    "topic": "Acentuação",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Qual palavra está grafada com acento corretamente?",
+    "options": [
+      "lampada",
+      "lâmpada",
+      "medico",
+      "publico"
+    ],
+    "answer": 1,
+    "explanation": "As palavras proparoxítonas são acentuadas.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0005",
+    "subject": "Português",
+    "topic": "Ortografia",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Qual é a grafia correta?",
+    "options": [
+      "beneficiente",
+      "excessão",
+      "previlégio",
+      "exceção"
+    ],
+    "answer": 3,
+    "explanation": "A ortografia oficial determina a forma escolhida.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0009",
+    "subject": "Português",
+    "topic": "Crase",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Em qual frase a crase está corretamente empregada?",
+    "options": [
+      "Fui à escola.",
+      "Cheguei à pé.",
+      "Fui à pé.",
+      "Voltei à correr."
+    ],
+    "answer": 0,
+    "explanation": "Ocorre fusão da preposição a com o artigo feminino a.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0013",
+    "subject": "Português",
+    "topic": "Concordância verbal",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Assinale a frase com concordância verbal adequada.",
+    "options": [
+      "Haviam muitas pessoas na sala.",
+      "Existe boas oportunidades.",
+      "Fazem dois anos que estudo.",
+      "Faz dois anos que estudo."
+    ],
+    "answer": 3,
+    "explanation": "Verbos impessoais, como fazer temporal e haver existencial, ficam no singular; os demais concordam com o sujeito.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0101",
+    "subject": "Inglês",
+    "topic": "Present simple",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Choose the best option to complete the sentence:\n\n“She ___ to work every day.”",
+    "options": [
+      "going",
+      "goes",
+      "go",
+      "gone"
+    ],
+    "answer": 1,
+    "explanation": "Em inglês, a alternativa “goes” completa a estrutura proposta. Verifique concordância, sentido e tempo verbal no contexto.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0105",
+    "subject": "Inglês",
+    "topic": "Present continuous",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Choose the best option to complete the sentence:\n\n“They ___ studying now.”",
+    "options": [
+      "am",
+      "is",
+      "be",
+      "are"
+    ],
+    "answer": 3,
+    "explanation": "Em inglês, a alternativa “are” completa a estrutura proposta. Verifique concordância, sentido e tempo verbal no contexto.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0109",
+    "subject": "Inglês",
+    "topic": "Past simple",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Choose the best option to complete the sentence:\n\n“Yesterday, he ___ early.”",
+    "options": [
+      "arrived",
+      "arrive",
+      "arrives",
+      "arriving"
+    ],
+    "answer": 0,
+    "explanation": "Em inglês, a alternativa “arrived” completa a estrutura proposta. Verifique concordância, sentido e tempo verbal no contexto.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0113",
+    "subject": "Inglês",
+    "topic": "Future",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Choose the best option to complete the sentence:\n\n“Tomorrow, we ___ review the lesson.”",
+    "options": [
+      "will",
+      "has",
+      "were",
+      "did"
+    ],
+    "answer": 0,
+    "explanation": "Em inglês, a alternativa “will” completa a estrutura proposta. Verifique concordância, sentido e tempo verbal no contexto.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0201",
+    "subject": "Raciocínio Lógico-Matemático",
+    "topic": "Porcentagem",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Uma mensalidade custava R$ 30,00 e sofreu aumento de 10%. Qual é o novo valor, em reais?",
+    "options": [
+      "33",
+      "27",
+      "3",
+      "40"
+    ],
+    "answer": 0,
+    "explanation": "Valor após o reajuste: 30 × (1 + 10/100) = R$ 33.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0202",
+    "subject": "Raciocínio Lógico-Matemático",
+    "topic": "Razões e proporções",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Uma viatura percorre 12 km em 6 minutos, em velocidade constante. Quantos quilômetros percorrerá em 18 minutos?",
+    "options": [
+      "24",
+      "18",
+      "36",
+      "48"
+    ],
+    "answer": 2,
+    "explanation": "Pela proporcionalidade direta, o tempo triplica e a distância também: 12 × 3 = 36.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0203",
+    "subject": "Raciocínio Lógico-Matemático",
+    "topic": "Média aritmética",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Qual é a média aritmética dos números pares de 2 até 12, inclusive?",
+    "options": [
+      "12",
+      "7",
+      "6",
+      "8"
+    ],
+    "answer": 1,
+    "explanation": "A soma dos extremos é 14; a média da progressão é (2 + 12)/2 = 7.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0204",
+    "subject": "Raciocínio Lógico-Matemático",
+    "topic": "Geometria plana",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Qual é a área de um retângulo com 7 m de base e 4 m de altura?",
+    "options": [
+      "22",
+      "35",
+      "28",
+      "14"
+    ],
+    "answer": 2,
+    "explanation": "Área do retângulo = base × altura = 7 × 4 = 28 m².",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0301",
+    "subject": "Literatura",
+    "topic": "Vidas Secas",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Em relação à obra “Vidas Secas”, qual opção descreve corretamente o aspecto “autor”?",
+    "options": [
+      "João Guimarães Rosa",
+      "José de Alencar",
+      "Graciliano Ramos",
+      "Machado de Assis"
+    ],
+    "answer": 2,
+    "explanation": "Na obra “Vidas Secas”, o aspecto “autor” corresponde a “Graciliano Ramos”.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial",
+    "book": "Vidas Secas",
+    "historicalNotice": "Obra do edital CFSd 2025; verificar obras do próximo edital."
+  },
+  {
+    "id": "FP-0351",
+    "subject": "Literatura",
+    "topic": "Campo Geral",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Em relação à obra “Campo Geral”, qual opção descreve corretamente o aspecto “autor”?",
+    "options": [
+      "João Guimarães Rosa",
+      "Euclides da Cunha",
+      "Jorge Amado",
+      "Graciliano Ramos"
+    ],
+    "answer": 0,
+    "explanation": "Na obra “Campo Geral”, o aspecto “autor” corresponde a “João Guimarães Rosa”.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial",
+    "book": "Campo Geral",
+    "historicalNotice": "Obra do edital CFSd 2025; verificar obras do próximo edital."
+  },
+  {
+    "id": "FP-0401",
+    "subject": "Direito e Direitos Humanos",
+    "topic": "CF/88 — Fundamentos",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Considerando CF/88 — Fundamentos, assinale a afirmação correta:",
+    "options": [
+      "O Brasil adota o partido único como fundamento estatal.",
+      "A Constituição exclui a dignidade dos fundamentos republicanos.",
+      "A dignidade da pessoa humana é fundamento da República Federativa do Brasil.",
+      "A União tem como fundamento a supremacia do Poder Executivo."
+    ],
+    "answer": 2,
+    "explanation": "Fundamento para revisão: CF/88 — Fundamentos. A dignidade da pessoa humana é fundamento da República Federativa do Brasil.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial",
+    "historicalNotice": "Conteúdo baseado no edital CFSd 2025; legislação deve ser conferida antes do lançamento."
+  },
+  {
+    "id": "FP-0403",
+    "subject": "Direito e Direitos Humanos",
+    "topic": "CF/88 — Poderes",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Considerando CF/88 — Poderes, assinale a afirmação correta:",
+    "options": [
+      "O Legislativo pode extinguir a independência do Judiciário.",
+      "O Executivo é hierarquicamente superior ao Judiciário.",
+      "A União possui apenas dois poderes.",
+      "Legislativo, Executivo e Judiciário são Poderes da União, independentes e harmônicos entre si."
+    ],
+    "answer": 3,
+    "explanation": "Fundamento para revisão: CF/88 — Poderes. Legislativo, Executivo e Judiciário são Poderes da União, independentes e harmônicos entre si.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial",
+    "historicalNotice": "Conteúdo baseado no edital CFSd 2025; legislação deve ser conferida antes do lançamento."
+  },
+  {
+    "id": "FP-0405",
+    "subject": "Direito e Direitos Humanos",
+    "topic": "CF/88 — Objetivos",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Considerando CF/88 — Objetivos, assinale a afirmação correta:",
+    "options": [
+      "Abolir os direitos fundamentais é objetivo da República.",
+      "Construir uma sociedade livre, justa e solidária é objetivo fundamental da República.",
+      "Extinguir o pluralismo é objetivo da República.",
+      "Suprimir a cidadania é objetivo da República."
+    ],
+    "answer": 1,
+    "explanation": "Fundamento para revisão: CF/88 — Objetivos. Construir uma sociedade livre, justa e solidária é objetivo fundamental da República.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial",
+    "historicalNotice": "Conteúdo baseado no edital CFSd 2025; legislação deve ser conferida antes do lançamento."
+  },
+  {
+    "id": "FP-0409",
+    "subject": "Direito e Direitos Humanos",
+    "topic": "CF/88 — Relações internacionais",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Considerando CF/88 — Relações internacionais, assinale a afirmação correta:",
+    "options": [
+      "O expansionismo territorial é princípio constitucional expresso.",
+      "A prevalência dos direitos humanos orienta as relações internacionais do Brasil.",
+      "O racismo orienta as relações internacionais do Brasil.",
+      "A intervenção arbitrária é princípio constitucional expresso."
+    ],
+    "answer": 1,
+    "explanation": "Fundamento para revisão: CF/88 — Relações internacionais. A prevalência dos direitos humanos orienta as relações internacionais do Brasil.",
+    "difficulty": "Fácil",
+    "reviewStatus": "revisao_editorial",
+    "historicalNotice": "Conteúdo baseado no edital CFSd 2025; legislação deve ser conferida antes do lançamento."
+  },
+  {
+    "id": "FP-0302",
+    "subject": "Literatura",
+    "topic": "Vidas Secas",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Sobre “Vidas Secas”, escolha a alternativa adequada ao tópico “autor”.",
+    "options": [
+      "Machado de Assis",
+      "Graciliano Ramos",
+      "José de Alencar",
+      "João Guimarães Rosa"
+    ],
+    "answer": 1,
+    "explanation": "O item correto é “Graciliano Ramos”. Essa informação deve ser reconhecida no estudo da obra de referência.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial",
+    "book": "Vidas Secas",
+    "historicalNotice": "Obra do edital CFSd 2025; verificar obras do próximo edital."
+  },
+  {
+    "id": "FP-0303",
+    "subject": "Literatura",
+    "topic": "Vidas Secas",
+    "origin": "autoral",
+    "sourceLabel": "Autoral · Foco PMMG 2027",
+    "year": 2026,
+    "stem": "Em relação à obra “Vidas Secas”, qual opção descreve corretamente o aspecto “ano de publicação”?",
+    "options": [
+      "1968",
+      "1956",
+      "1888",
+      "1938"
+    ],
+    "answer": 3,
+    "explanation": "Na obra “Vidas Secas”, o aspecto “ano de publicação” corresponde a “1938”.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial",
+    "book": "Vidas Secas",
+    "historicalNotice": "Obra do edital CFSd 2025; verificar obras do próximo edital."
+  }
+]

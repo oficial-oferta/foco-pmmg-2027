@@ -1,0 +1,22 @@
+const vm=require('vm'),fs=require('fs'),path=require('path'),crypto=require('crypto');
+const app={innerHTML:''};
+const storage=()=>{const map=new Map();return {getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)}};
+const local=storage(),sess=storage();
+const script=fs.readFileSync(path.join(__dirname,'../app.js'),'utf8');
+const context=vm.createContext({window:{FOCO_CONFIG:{},scrollTo:()=>{}},document:{querySelector:(q)=>q==='#app'?app:null,addEventListener:()=>{},title:''},localStorage:local,sessionStorage:sess,crypto,console,Date,Math,JSON,Intl,setTimeout,clearInterval,setInterval,navigator:{},location:{protocol:'file:'},fetch:async path=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(__dirname+'/../data/questions.json','utf8'))})});
+vm.runInContext(script,context);
+(async()=>{
+ await vm.runInContext('startDemo()',context);
+ if(!app.innerHTML.includes('É hora de evoluir'))throw Error('Home não renderizada');
+ vm.runInContext('switchScreen("train")',context);
+ if(!app.innerHTML.includes('Treino rápido'))throw Error('Treino não renderizado');
+ vm.runInContext('begin()',context);
+ if(!app.innerHTML.includes('Confirmar resposta'))throw Error('Questão não renderizada');
+ vm.runInContext('state.training.selected=state.training.queue[0].answer',context);
+ await vm.runInContext('confirm()',context);
+ if(!app.innerHTML.includes('Resposta correta'))throw Error('Correção ausente');
+ if(!vm.runInContext('state.attempts.length',context))throw Error('Tentativa não registrada');
+ vm.runInContext('state.screen="stats";render()',context);
+ if(!app.innerHTML.includes('Seu radar'))throw Error('Radar ausente');
+ console.log('OK: login preview, home, treino, correção, XP e radar. 500 perguntas presentes.');
+})().catch(err=>{console.error(err);process.exit(1)});
