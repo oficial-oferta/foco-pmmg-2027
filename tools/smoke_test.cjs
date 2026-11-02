@@ -1,9 +1,10 @@
 const vm=require('vm'),fs=require('fs'),path=require('path'),crypto=require('crypto');
-const app={innerHTML:''};
+const app={innerHTML:'',querySelector:()=>null};
 const storage=()=>{const map=new Map();return {getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)}};
 const local=storage(),sess=storage();
 const script=fs.readFileSync(path.join(__dirname,'../app.js'),'utf8');
-const context=vm.createContext({window:{FOCO_CONFIG:{},scrollTo:()=>{}},document:{querySelector:(q)=>q==='#app'?app:null,addEventListener:()=>{},title:''},localStorage:local,sessionStorage:sess,crypto,console,Date,Math,JSON,Intl,setTimeout,clearInterval,setInterval,navigator:{},location:{protocol:'file:'},fetch:async path=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(__dirname+'/../data/questions.json','utf8'))})});
+const context=vm.createContext({window:{FOCO_CONFIG:{},FOCO_EXAMS:[],scrollTo:()=>{},confirm:()=>true},document:{querySelector:(q)=>q==='#app'?app:null,addEventListener:()=>{},title:''},localStorage:local,sessionStorage:sess,crypto,console,Date,Math,JSON,Intl,setTimeout,clearInterval,setInterval,navigator:{},location:{protocol:'file:'},fetch:async path=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(__dirname+'/../data/questions.json','utf8'))})});
+vm.runInContext(fs.readFileSync(path.join(__dirname,'../official-exams.js'),'utf8'),context);
 vm.runInContext(script,context);
 (async()=>{
  await vm.runInContext('startDemo()',context);
@@ -18,5 +19,13 @@ vm.runInContext(script,context);
  if(!vm.runInContext('state.attempts.length',context))throw Error('Tentativa não registrada');
  vm.runInContext('state.screen="stats";render()',context);
  if(!app.innerHTML.includes('Seu radar'))throw Error('Radar ausente');
- console.log('OK: login preview, home, treino, correção, XP e radar. 500 perguntas presentes.');
+
+ vm.runInContext('switchScreen("simulados")',context);
+ if(!app.innerHTML.includes('Simulados oficiais'))throw Error('Aba Simulados ausente');
+ await vm.runInContext('officialAction("sim-start:pmmg-cfsd-2025:sem_literatura")',context);
+ if(!app.innerHTML.includes('Questão oficial nº 1'))throw Error('Simulado não iniciou');
+ for(let i=0;i<45;i++){await vm.runInContext('officialAction("sim-answer:A")',context);if(i<44)await vm.runInContext('officialAction("sim-next")',context)}
+ await vm.runInContext('officialAction("sim-finish")',context);
+ if(!app.innerHTML.includes('Simulado concluído')&&!app.innerHTML.includes('SIMULADO CONCLUÍDO'))throw Error('Resultado ausente');
+ console.log('OK: home, treino, correção, XP, radar e simulado oficial com 45 itens. 500 questões ativas.');
 })().catch(err=>{console.error(err);process.exit(1)});
