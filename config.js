@@ -1,3 +1,2 @@
-// Preencher apenas com dados PÚBLICOS do novo projeto Supabase.
-// Nunca colocar service_role/secret key aqui.
-window.FOCO_CONFIG = { supabaseUrl: '', publishableKey: '', functionName: 'manage-users' };
+// Configuração PÚBLICA. Não inclua segredos nem service_role.
+window.FOCO_CONFIG = {supabaseUrl:'https://sjzsbcrvronnqoljzzro.supabase.co',publishableKey:'sb_publishable_3_zs4PP_fZSdliTDDcm2MQ_-k6OmhL5',functionName:'manage-users'};
