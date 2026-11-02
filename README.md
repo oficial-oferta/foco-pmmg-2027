@@ -66,3 +66,8 @@ No app, perguntas autorais são identificadas como **Autoral · Foco PMMG 2027**
 - Salvamento de treinos incompletos e fila offline com sincronização posterior.
 - Histórico por assunto e análise semanal no admin.
 - Pontuação bônus de metas, simulados cronometrados e melhorias de acessibilidade.
+## Implantação de 01/11/2026
+
+Backend **exclusivo** criado em Supabase: `sjzsbcrvronnqoljzzro` (sa-east-1), com 500 questões importadas e função `manage-users` instalada. Frontend conectado à chave pública. O cadastro público não é oferecido pela interface; também é necessário desativar **Allow new users to sign up** no painel Auth do Supabase antes de convidar terceiros. O acesso a `questions` pela API está limitado a contas com papel `admin` ou `student` em `app_metadata` e perfil ativo. O site oferece uma demonstração local sem credenciais, sem acesso a contas reais.
+
+**Pendente de operação pelo proprietário:** ativar Pages em Settings → Pages → Source: GitHub Actions; criar primeiro usuário em Authentication → Users do Supabase, definir `app_metadata.role='admin'` no servidor (ver instrução acima). A conexão GitHub disponível não oferece endpoint para mudar Settings → Pages. Não declarar URL publicada nem credenciais de admin antes de confirmação real.
