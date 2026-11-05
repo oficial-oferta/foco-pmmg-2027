@@ -88,3 +88,11 @@ No app, perguntas autorais são identificadas como **Autoral · Foco PMMG 2027**
 - Migração aplicada no projeto Supabase exclusivo `sjzsbcrvronnqoljzzro`, disponível em `supabase/v2_premium_training_sessions.sql` para controle de versão.
 
 A V2 não altera as 500 questões autorais e os simulados oficiais existentes. O app continua independente e não oficial da PMMG.
+
+## Saúde do projeto Supabase (05/11/2026)
+
+O projeto do Foco PMMG `sjzsbcrvronnqoljzzro` recebeu um aviso de possível pausa por inatividade no Free Plan. Foi confirmado `ACTIVE_HEALTHY` no painel Supabase. Uma alteração reversível na questão `FP-0001` foi aplicada e revertida, sem modificar seu conteúdo final. A tabela `public.app_healthcheck` contém apenas a linha pública `{id:1,status:'ok'}`, com RLS e SELECT para `anon`, sem qualquer dado de usuários.
+
+Workflow GitHub Actions: [Saúde do Supabase](.github/workflows/supabase-healthcheck.yml), agendado para **06:23, 12:23 e 18:23** (America/Sao_Paulo). Faz uma única consulta REST pública e falha se o endpoint estiver inacessível ou devolver conteúdo inesperado. Não precisa de senha nem chave de administração; utiliza somente a chave pública existente no frontend. Consulte a aba Actions para conferir execuções e eventuais falhas.
+
+**Limitações:** a documentação Supabase diz que algumas consultas diárias normalmente bastam para evitar a pausa por baixa atividade, mas não garante que qualquer check seja suficiente. O GitHub pode atrasar/omitir algumas execuções e desativa workflows agendados em repositórios públicos sem atividade por 60 dias. O plano pago Pro é a única prevenção garantida contra pausa automática por inatividade. O monitor **não substitui** uso real nem backup de dados.
