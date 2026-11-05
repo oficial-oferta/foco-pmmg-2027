@@ -1,0 +1,28 @@
+name: Saúde do Supabase — Foco PMMG 2027
+on:
+  schedule:
+    # 06:23, 12:23 e 18:23 em America/Sao_Paulo (UTC-3)
+    - cron: '23 9,15,21 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/supabase-healthcheck.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Consultar tabela pública de saúde do Supabase
+        env:
+          SUPABASE_URL: 'https://sjzsbcrvronnqoljzzro.supabase.co'
+          # Apenas chave publicável, também presente no frontend; nunca usar service_role.
+          SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_3_zs4PP_fZSdliTDDcm2MQ_-k6OmhL5'
+        shell: bash
+        run: |
+          set -euo pipefail
+          response="$(curl --fail-with-body --silent --show-error --retry 2 --retry-delay 3 --max-time 30             --header "apikey: ${SUPABASE_PUBLISHABLE_KEY}"             --header "Accept: application/json"             "${SUPABASE_URL}/rest/v1/app_healthcheck?select=id,status&id=eq.1")"
+          printf '%s' "$response" | jq -e 'length == 1 and .[0].id == 1 and .[0].status == "ok"' >/dev/null
+          echo "Supabase respondeu à consulta do banco normalmente."
