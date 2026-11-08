@@ -20,12 +20,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Auditar integridade do banco expandido (500 por matéria)
         run: node tools/audit_expansion_v3.cjs
+      - name: Auditar as 2.500 questões após a revisão editorial V4
+        run: node tools/audit_content_v4.cjs
       - name: Preparar somente frontend (nao publicar dados nem SQL)
         run: |
           mkdir -p _site/assets _site/data
           cp index.html styles.css app.js v2-premium.js official-exams.js config.js sw.js manifest.webmanifest _site/
           cp assets/icon.svg assets/sample-questions.json _site/assets/
-          cp data/questions.json _site/data/
+          cp data/questions.json data/reviewed-legacy-overrides.json _site/data/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
