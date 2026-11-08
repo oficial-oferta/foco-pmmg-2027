@@ -1,0 +1,1562 @@
+[
+  {
+    "id": "FP-0211",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de treinamento, há 5 opções para o primeiro campo, 7 para o segundo e 9 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "44",
+      "315",
+      "21",
+      "35"
+    ],
+    "answer": 1,
+    "explanation": "As escolhas independentes se multiplicam: 5×7×9=315.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0221",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de pesquisa, há 6 opções para o primeiro campo, 8 para o segundo e 10 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "24",
+      "48",
+      "58",
+      "480"
+    ],
+    "answer": 3,
+    "explanation": "As escolhas independentes se multiplicam: 6×8×10=480.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0231",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de contagem, há 7 opções para o primeiro campo, 9 para o segundo e 11 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "74",
+      "693",
+      "27",
+      "63"
+    ],
+    "answer": 1,
+    "explanation": "As escolhas independentes se multiplicam: 7×9×11=693.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0241",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de estatística, há 8 opções para o primeiro campo, 10 para o segundo e 12 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "30",
+      "80",
+      "92",
+      "960"
+    ],
+    "answer": 3,
+    "explanation": "As escolhas independentes se multiplicam: 8×10×12=960.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0251",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de planejamento, há 9 opções para o primeiro campo, 11 para o segundo e 13 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "112",
+      "1287",
+      "33",
+      "99"
+    ],
+    "answer": 1,
+    "explanation": "As escolhas independentes se multiplicam: 9×11×13=1287.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0261",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de logística, há 10 opções para o primeiro campo, 12 para o segundo e 14 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "36",
+      "120",
+      "134",
+      "1680"
+    ],
+    "answer": 3,
+    "explanation": "As escolhas independentes se multiplicam: 10×12×14=1680.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0271",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de formação, há 11 opções para o primeiro campo, 13 para o segundo e 15 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "158",
+      "2145",
+      "39",
+      "143"
+    ],
+    "answer": 1,
+    "explanation": "As escolhas independentes se multiplicam: 11×13×15=2145.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0281",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de controle, há 12 opções para o primeiro campo, 14 para o segundo e 16 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "42",
+      "168",
+      "184",
+      "2688"
+    ],
+    "answer": 3,
+    "explanation": "As escolhas independentes se multiplicam: 12×14×16=2688.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0291",
+    "topic": "Princípio multiplicativo",
+    "stem": "Para compor um código em uma atividade de avaliação, há 13 opções para o primeiro campo, 15 para o segundo e 17 para o terceiro. Quantos códigos distintos podem ser formados?",
+    "options": [
+      "212",
+      "3315",
+      "45",
+      "195"
+    ],
+    "answer": 1,
+    "explanation": "As escolhas independentes se multiplicam: 13×15×17=3315.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0212",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de treinamento registra: setor A=5, B=7, C=9 e D=2. Qual é a soma dos setores A e C?",
+    "options": [
+      "14",
+      "12",
+      "16",
+      "7"
+    ],
+    "answer": 0,
+    "explanation": "Somando A e C, temos 5+9=14.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0222",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de pesquisa registra: setor A=6, B=8, C=10 e D=3. Qual é a soma dos setores A e C?",
+    "options": [
+      "18",
+      "9",
+      "16",
+      "14"
+    ],
+    "answer": 2,
+    "explanation": "Somando A e C, temos 6+10=16.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0232",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de contagem registra: setor A=7, B=9, C=11 e D=4. Qual é a soma dos setores A e C?",
+    "options": [
+      "18",
+      "16",
+      "20",
+      "11"
+    ],
+    "answer": 0,
+    "explanation": "Somando A e C, temos 7+11=18.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0242",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de estatística registra: setor A=8, B=10, C=12 e D=5. Qual é a soma dos setores A e C?",
+    "options": [
+      "22",
+      "13",
+      "20",
+      "18"
+    ],
+    "answer": 2,
+    "explanation": "Somando A e C, temos 8+12=20.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0252",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de planejamento registra: setor A=9, B=11, C=13 e D=6. Qual é a soma dos setores A e C?",
+    "options": [
+      "22",
+      "20",
+      "24",
+      "15"
+    ],
+    "answer": 0,
+    "explanation": "Somando A e C, temos 9+13=22.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0262",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de logística registra: setor A=10, B=12, C=14 e D=7. Qual é a soma dos setores A e C?",
+    "options": [
+      "26",
+      "17",
+      "24",
+      "22"
+    ],
+    "answer": 2,
+    "explanation": "Somando A e C, temos 10+14=24.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0272",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de formação registra: setor A=11, B=13, C=15 e D=8. Qual é a soma dos setores A e C?",
+    "options": [
+      "26",
+      "24",
+      "28",
+      "19"
+    ],
+    "answer": 0,
+    "explanation": "Somando A e C, temos 11+15=26.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0282",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de controle registra: setor A=12, B=14, C=16 e D=9. Qual é a soma dos setores A e C?",
+    "options": [
+      "30",
+      "21",
+      "28",
+      "26"
+    ],
+    "answer": 2,
+    "explanation": "Somando A e C, temos 12+16=28.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0292",
+    "topic": "Interpretação de tabela",
+    "stem": "Uma tabela em uma atividade de avaliação registra: setor A=13, B=15, C=17 e D=10. Qual é a soma dos setores A e C?",
+    "options": [
+      "30",
+      "28",
+      "32",
+      "23"
+    ],
+    "answer": 0,
+    "explanation": "Somando A e C, temos 13+17=30.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0213",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de treinamento mede 5 cm por 7 cm por 9 cm. Qual é o volume em cm³?",
+    "options": [
+      "35",
+      "286",
+      "21",
+      "315"
+    ],
+    "answer": 3,
+    "explanation": "Volume = comprimento×largura×altura = 5×7×9=315 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0223",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de pesquisa mede 6 cm por 8 cm por 10 cm. Qual é o volume em cm³?",
+    "options": [
+      "24",
+      "480",
+      "48",
+      "376"
+    ],
+    "answer": 1,
+    "explanation": "Volume = comprimento×largura×altura = 6×8×10=480 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0233",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de contagem mede 7 cm por 9 cm por 11 cm. Qual é o volume em cm³?",
+    "options": [
+      "63",
+      "478",
+      "27",
+      "693"
+    ],
+    "answer": 3,
+    "explanation": "Volume = comprimento×largura×altura = 7×9×11=693 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0243",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de estatística mede 8 cm por 10 cm por 12 cm. Qual é o volume em cm³?",
+    "options": [
+      "30",
+      "960",
+      "80",
+      "592"
+    ],
+    "answer": 1,
+    "explanation": "Volume = comprimento×largura×altura = 8×10×12=960 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0253",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de planejamento mede 9 cm por 11 cm por 13 cm. Qual é o volume em cm³?",
+    "options": [
+      "99",
+      "718",
+      "33",
+      "1287"
+    ],
+    "answer": 3,
+    "explanation": "Volume = comprimento×largura×altura = 9×11×13=1287 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0263",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de logística mede 10 cm por 12 cm por 14 cm. Qual é o volume em cm³?",
+    "options": [
+      "36",
+      "1680",
+      "120",
+      "856"
+    ],
+    "answer": 1,
+    "explanation": "Volume = comprimento×largura×altura = 10×12×14=1680 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0273",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de formação mede 11 cm por 13 cm por 15 cm. Qual é o volume em cm³?",
+    "options": [
+      "143",
+      "1006",
+      "39",
+      "2145"
+    ],
+    "answer": 3,
+    "explanation": "Volume = comprimento×largura×altura = 11×13×15=2145 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0283",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de controle mede 12 cm por 14 cm por 16 cm. Qual é o volume em cm³?",
+    "options": [
+      "42",
+      "2688",
+      "168",
+      "1168"
+    ],
+    "answer": 1,
+    "explanation": "Volume = comprimento×largura×altura = 12×14×16=2688 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0293",
+    "topic": "Volume de bloco retangular",
+    "stem": "Uma caixa em uma atividade de avaliação mede 13 cm por 15 cm por 17 cm. Qual é o volume em cm³?",
+    "options": [
+      "195",
+      "1342",
+      "45",
+      "3315"
+    ],
+    "answer": 3,
+    "explanation": "Volume = comprimento×largura×altura = 13×15×17=3315 cm³.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0214",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de treinamento terá 3 caracteres ordenados escolhidos entre 5 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "20",
+      "10",
+      "60",
+      "125"
+    ],
+    "answer": 2,
+    "explanation": "Arranjo de 3 dentre 5: 5×4×3=60.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0224",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de pesquisa terá 3 caracteres ordenados escolhidos entre 6 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "120",
+      "216",
+      "30",
+      "20"
+    ],
+    "answer": 0,
+    "explanation": "Arranjo de 3 dentre 6: 6×5×4=120.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0234",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de contagem terá 3 caracteres ordenados escolhidos entre 7 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "42",
+      "35",
+      "210",
+      "343"
+    ],
+    "answer": 2,
+    "explanation": "Arranjo de 3 dentre 7: 7×6×5=210.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0244",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de estatística terá 3 caracteres ordenados escolhidos entre 8 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "336",
+      "512",
+      "56",
+      "338"
+    ],
+    "answer": 0,
+    "explanation": "Arranjo de 3 dentre 8: 8×7×6=336.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0254",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de planejamento terá 3 caracteres ordenados escolhidos entre 9 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "72",
+      "84",
+      "504",
+      "729"
+    ],
+    "answer": 2,
+    "explanation": "Arranjo de 3 dentre 9: 9×8×7=504.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0264",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de logística terá 3 caracteres ordenados escolhidos entre 10 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "720",
+      "1000",
+      "90",
+      "120"
+    ],
+    "answer": 0,
+    "explanation": "Arranjo de 3 dentre 10: 10×9×8=720.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0274",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de formação terá 3 caracteres ordenados escolhidos entre 11 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "110",
+      "165",
+      "990",
+      "1331"
+    ],
+    "answer": 2,
+    "explanation": "Arranjo de 3 dentre 11: 11×10×9=990.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0284",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de controle terá 3 caracteres ordenados escolhidos entre 12 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "1320",
+      "1728",
+      "132",
+      "220"
+    ],
+    "answer": 0,
+    "explanation": "Arranjo de 3 dentre 12: 12×11×10=1320.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0294",
+    "topic": "Arranjos sem repetição",
+    "stem": "Uma senha em uma atividade de avaliação terá 3 caracteres ordenados escolhidos entre 13 símbolos distintos, sem repetição. Quantas senhas podem ser formadas?",
+    "options": [
+      "156",
+      "286",
+      "1716",
+      "2197"
+    ],
+    "answer": 2,
+    "explanation": "Arranjo de 3 dentre 13: 13×12×11=1716.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0215",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de treinamento, há 5 bolas vermelhas e 7 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "20/144",
+      "5/33",
+      "5/12",
+      "25/144"
+    ],
+    "answer": 1,
+    "explanation": "Probabilidade=5/12×4/11=5/33.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0225",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de pesquisa, há 6 bolas vermelhas e 8 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "6/14",
+      "36/196",
+      "30/196",
+      "15/91"
+    ],
+    "answer": 3,
+    "explanation": "Probabilidade=6/14×5/13=15/91.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0235",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de contagem, há 7 bolas vermelhas e 9 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "42/256",
+      "7/40",
+      "7/16",
+      "49/256"
+    ],
+    "answer": 1,
+    "explanation": "Probabilidade=7/16×6/15=7/40.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0245",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de estatística, há 8 bolas vermelhas e 10 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "8/18",
+      "64/324",
+      "56/324",
+      "28/153"
+    ],
+    "answer": 3,
+    "explanation": "Probabilidade=8/18×7/17=28/153.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0255",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de planejamento, há 9 bolas vermelhas e 11 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "72/400",
+      "18/95",
+      "9/20",
+      "81/400"
+    ],
+    "answer": 1,
+    "explanation": "Probabilidade=9/20×8/19=18/95.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0265",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de logística, há 10 bolas vermelhas e 12 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "10/22",
+      "100/484",
+      "90/484",
+      "15/77"
+    ],
+    "answer": 3,
+    "explanation": "Probabilidade=10/22×9/21=15/77.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0275",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de formação, há 11 bolas vermelhas e 13 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "110/576",
+      "55/276",
+      "11/24",
+      "121/576"
+    ],
+    "answer": 1,
+    "explanation": "Probabilidade=11/24×10/23=55/276.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0285",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de controle, há 12 bolas vermelhas e 14 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "12/26",
+      "144/676",
+      "132/676",
+      "66/325"
+    ],
+    "answer": 3,
+    "explanation": "Probabilidade=12/26×11/25=66/325.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0295",
+    "topic": "Probabilidade sem reposição",
+    "stem": "Numa urna em uma atividade de avaliação, há 13 bolas vermelhas e 15 azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?",
+    "options": [
+      "156/784",
+      "13/63",
+      "13/28",
+      "169/784"
+    ],
+    "answer": 1,
+    "explanation": "Probabilidade=13/28×12/27=13/63.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0216",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de treinamento, a equação x² − 12x + 35=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "12",
+      "35",
+      "-12",
+      "-2"
+    ],
+    "answer": 0,
+    "explanation": "As raízes são 5 e 7. A soma equivale a 12 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0226",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de pesquisa, a equação x² − 14x + 48=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "-14",
+      "-2",
+      "14",
+      "48"
+    ],
+    "answer": 2,
+    "explanation": "As raízes são 6 e 8. A soma equivale a 14 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0236",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de contagem, a equação x² − 16x + 63=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "16",
+      "63",
+      "-16",
+      "-2"
+    ],
+    "answer": 0,
+    "explanation": "As raízes são 7 e 9. A soma equivale a 16 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0246",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de estatística, a equação x² − 18x + 80=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "-18",
+      "-2",
+      "18",
+      "80"
+    ],
+    "answer": 2,
+    "explanation": "As raízes são 8 e 10. A soma equivale a 18 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0256",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de planejamento, a equação x² − 20x + 99=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "20",
+      "99",
+      "-20",
+      "-2"
+    ],
+    "answer": 0,
+    "explanation": "As raízes são 9 e 11. A soma equivale a 20 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0266",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de logística, a equação x² − 22x + 120=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "-22",
+      "-2",
+      "22",
+      "120"
+    ],
+    "answer": 2,
+    "explanation": "As raízes são 10 e 12. A soma equivale a 22 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0276",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de formação, a equação x² − 24x + 143=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "24",
+      "143",
+      "-24",
+      "-2"
+    ],
+    "answer": 0,
+    "explanation": "As raízes são 11 e 13. A soma equivale a 24 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0286",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de controle, a equação x² − 26x + 168=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "-26",
+      "-2",
+      "26",
+      "168"
+    ],
+    "answer": 2,
+    "explanation": "As raízes são 12 e 14. A soma equivale a 26 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0296",
+    "topic": "Equação do segundo grau",
+    "stem": "No estudo em uma atividade de avaliação, a equação x² − 28x + 195=0 foi apresentada. Qual é a soma das raízes?",
+    "options": [
+      "28",
+      "195",
+      "-28",
+      "-2"
+    ],
+    "answer": 0,
+    "explanation": "As raízes são 13 e 15. A soma equivale a 28 pelo teorema de Viète.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0218",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 10, em uma atividade de treinamento. Qual é o resultado?",
+    "options": [
+      "45",
+      "11",
+      "55",
+      "100"
+    ],
+    "answer": 2,
+    "explanation": "A soma é n(n+1)/2=10×11/2=55.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0228",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 11, em uma atividade de pesquisa. Qual é o resultado?",
+    "options": [
+      "66",
+      "121",
+      "55",
+      "12"
+    ],
+    "answer": 0,
+    "explanation": "A soma é n(n+1)/2=11×12/2=66.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0238",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 12, em uma atividade de contagem. Qual é o resultado?",
+    "options": [
+      "66",
+      "13",
+      "78",
+      "144"
+    ],
+    "answer": 2,
+    "explanation": "A soma é n(n+1)/2=12×13/2=78.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0248",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 13, em uma atividade de estatística. Qual é o resultado?",
+    "options": [
+      "91",
+      "169",
+      "78",
+      "14"
+    ],
+    "answer": 0,
+    "explanation": "A soma é n(n+1)/2=13×14/2=91.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0258",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 14, em uma atividade de planejamento. Qual é o resultado?",
+    "options": [
+      "91",
+      "15",
+      "105",
+      "196"
+    ],
+    "answer": 2,
+    "explanation": "A soma é n(n+1)/2=14×15/2=105.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0268",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 15, em uma atividade de logística. Qual é o resultado?",
+    "options": [
+      "120",
+      "225",
+      "105",
+      "16"
+    ],
+    "answer": 0,
+    "explanation": "A soma é n(n+1)/2=15×16/2=120.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0278",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 16, em uma atividade de formação. Qual é o resultado?",
+    "options": [
+      "120",
+      "17",
+      "136",
+      "256"
+    ],
+    "answer": 2,
+    "explanation": "A soma é n(n+1)/2=16×17/2=136.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0288",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 17, em uma atividade de controle. Qual é o resultado?",
+    "options": [
+      "153",
+      "289",
+      "136",
+      "18"
+    ],
+    "answer": 0,
+    "explanation": "A soma é n(n+1)/2=17×18/2=153.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0298",
+    "topic": "Somatório de inteiros",
+    "stem": "Considere a soma de todos os números inteiros positivos de 1 até 18, em uma atividade de avaliação. Qual é o resultado?",
+    "options": [
+      "153",
+      "19",
+      "171",
+      "324"
+    ],
+    "answer": 2,
+    "explanation": "A soma é n(n+1)/2=18×19/2=171.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0219",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de treinamento, quatro valores foram 3, 6, 9, 12. Qual é a média aritmética?",
+    "options": [
+      "9,5",
+      "7,5",
+      "30",
+      "8,5"
+    ],
+    "answer": 1,
+    "explanation": "Média=(3+6+9+12)/4=7,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0229",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de pesquisa, quatro valores foram 4, 7, 10, 13. Qual é a média aritmética?",
+    "options": [
+      "34",
+      "9,5",
+      "10,5",
+      "8,5"
+    ],
+    "answer": 3,
+    "explanation": "Média=(4+7+10+13)/4=8,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0239",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de contagem, quatro valores foram 5, 8, 11, 14. Qual é a média aritmética?",
+    "options": [
+      "11,5",
+      "9,5",
+      "38",
+      "10,5"
+    ],
+    "answer": 1,
+    "explanation": "Média=(5+8+11+14)/4=9,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0249",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de estatística, quatro valores foram 6, 9, 12, 15. Qual é a média aritmética?",
+    "options": [
+      "42",
+      "11,5",
+      "12,5",
+      "10,5"
+    ],
+    "answer": 3,
+    "explanation": "Média=(6+9+12+15)/4=10,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0259",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de planejamento, quatro valores foram 7, 10, 13, 16. Qual é a média aritmética?",
+    "options": [
+      "13,5",
+      "11,5",
+      "46",
+      "12,5"
+    ],
+    "answer": 1,
+    "explanation": "Média=(7+10+13+16)/4=11,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0269",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de logística, quatro valores foram 8, 11, 14, 17. Qual é a média aritmética?",
+    "options": [
+      "50",
+      "13,5",
+      "14,5",
+      "12,5"
+    ],
+    "answer": 3,
+    "explanation": "Média=(8+11+14+17)/4=12,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0279",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de formação, quatro valores foram 9, 12, 15, 18. Qual é a média aritmética?",
+    "options": [
+      "15,5",
+      "13,5",
+      "54",
+      "14,5"
+    ],
+    "answer": 1,
+    "explanation": "Média=(9+12+15+18)/4=13,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0289",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de controle, quatro valores foram 10, 13, 16, 19. Qual é a média aritmética?",
+    "options": [
+      "58",
+      "15,5",
+      "16,5",
+      "14,5"
+    ],
+    "answer": 3,
+    "explanation": "Média=(10+13+16+19)/4=14,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0299",
+    "topic": "Média aritmética",
+    "stem": "Em em uma atividade de avaliação, quatro valores foram 11, 14, 17, 20. Qual é a média aritmética?",
+    "options": [
+      "17,5",
+      "15,5",
+      "62",
+      "16,5"
+    ],
+    "answer": 1,
+    "explanation": "Média=(11+14+17+20)/4=15,5.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0220",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de treinamento contém 5 linhas e 7 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "30",
+      "35",
+      "25",
+      "12"
+    ],
+    "answer": 0,
+    "explanation": "Total 5×7, menos 5 da primeira coluna: 30.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0230",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de pesquisa contém 6 linhas e 8 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "36",
+      "14",
+      "42",
+      "48"
+    ],
+    "answer": 2,
+    "explanation": "Total 6×8, menos 6 da primeira coluna: 42.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0240",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de contagem contém 7 linhas e 9 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "56",
+      "63",
+      "49",
+      "16"
+    ],
+    "answer": 0,
+    "explanation": "Total 7×9, menos 7 da primeira coluna: 56.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0250",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de estatística contém 8 linhas e 10 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "64",
+      "18",
+      "72",
+      "80"
+    ],
+    "answer": 2,
+    "explanation": "Total 8×10, menos 8 da primeira coluna: 72.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0260",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de planejamento contém 9 linhas e 11 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "90",
+      "99",
+      "81",
+      "20"
+    ],
+    "answer": 0,
+    "explanation": "Total 9×11, menos 9 da primeira coluna: 90.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0270",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de logística contém 10 linhas e 12 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "100",
+      "22",
+      "110",
+      "120"
+    ],
+    "answer": 2,
+    "explanation": "Total 10×12, menos 10 da primeira coluna: 110.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0280",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de formação contém 11 linhas e 13 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "132",
+      "143",
+      "121",
+      "24"
+    ],
+    "answer": 0,
+    "explanation": "Total 11×13, menos 11 da primeira coluna: 132.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0290",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de controle contém 12 linhas e 14 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "144",
+      "26",
+      "156",
+      "168"
+    ],
+    "answer": 2,
+    "explanation": "Total 12×14, menos 12 da primeira coluna: 156.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0300",
+    "topic": "Princípio da contagem",
+    "stem": "Um painel em uma atividade de avaliação contém 13 linhas e 15 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "options": [
+      "182",
+      "195",
+      "169",
+      "28"
+    ],
+    "answer": 0,
+    "explanation": "Total 13×15, menos 13 da primeira coluna: 182.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0002",
+    "topic": "Formação de palavras",
+    "stem": "Na palavra \"infelizmente\", o prefixo \"in-\" acrescenta ao adjetivo \"feliz\" qual ideia?",
+    "options": [
+      "pluralidade",
+      "tempo futuro",
+      "negação",
+      "intensidade"
+    ],
+    "answer": 2,
+    "explanation": "O prefixo in- nega a propriedade expressa por feliz: infeliz.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0003",
+    "topic": "Formação de palavras",
+    "stem": "A palavra \"reler\" forma-se a partir de \"ler\" pelo acréscimo de \"re-\". O prefixo exprime principalmente:",
+    "options": [
+      "lugar",
+      "repetição",
+      "negação",
+      "diminuição"
+    ],
+    "answer": 1,
+    "explanation": "Em reler, re- indica realizar a leitura outra vez.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0004",
+    "topic": "Derivação sufixal",
+    "stem": "Em \"lentamente\", o elemento \"-mente\" permite formar um advérbio de modo a partir de:",
+    "options": [
+      "um adjetivo",
+      "um numeral",
+      "uma preposição",
+      "uma conjunção"
+    ],
+    "answer": 0,
+    "explanation": "O sufixo -mente forma advérbio de modo a partir da forma feminina do adjetivo (lenta).",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0006",
+    "topic": "Coesão referencial",
+    "stem": "Leia: \"A professora entregou as folhas aos alunos. Eles começaram a responder.\" O pronome \"Eles\" retoma:",
+    "options": [
+      "as folhas",
+      "as perguntas",
+      "os alunos",
+      "a professora"
+    ],
+    "answer": 2,
+    "explanation": "Eles é pronome pessoal masculino plural que retoma os alunos.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0007",
+    "topic": "Conectivos — concessão",
+    "stem": "Em \"Embora estivesse cansada, a candidata terminou a revisão\", a oração iniciada por \"Embora\" exprime:",
+    "options": [
+      "consequência",
+      "concessão",
+      "conclusão",
+      "finalidade"
+    ],
+    "answer": 1,
+    "explanation": "Embora introduz fato contrário à expectativa, mas insuficiente para impedir a ação.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0008",
+    "topic": "Conectivos — conclusão",
+    "stem": "Em \"O relatório estava completo; portanto, foi encaminhado\", a palavra \"portanto\" indica:",
+    "options": [
+      "conclusão",
+      "condição",
+      "alternância",
+      "comparação"
+    ],
+    "answer": 0,
+    "explanation": "Portanto introduz conclusão derivada do conteúdo anterior.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0010",
+    "topic": "Semântica — sentido figurado",
+    "stem": "Na frase \"Ela é o coração do projeto\", o termo \"coração\" foi empregado com sentido:",
+    "options": [
+      "técnico cirúrgico",
+      "puramente numérico",
+      "figurado",
+      "anatômico literal"
+    ],
+    "answer": 2,
+    "explanation": "Coração representa figuradamente o elemento central ou essencial do projeto.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0011",
+    "topic": "Polissemia",
+    "stem": "Em \"Ele se sentou no banco\" e \"Ela depositou dinheiro no banco\", a palavra \"banco\" exemplifica:",
+    "options": [
+      "antítese",
+      "polissemia",
+      "sinonímia total",
+      "concordância"
+    ],
+    "answer": 1,
+    "explanation": "Uma mesma forma lexical assume sentidos diferentes conforme o contexto.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0012",
+    "topic": "Parônimos",
+    "stem": "Complete adequadamente: \"A ___ de cinema começará às 19 horas\".",
+    "options": [
+      "sessão",
+      "seção",
+      "cessão",
+      "sessam"
+    ],
+    "answer": 0,
+    "explanation": "Sessão é um período de atividade ou apresentação. Seção designa divisão e cessão, o ato de ceder.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0013",
+    "topic": "Ortografia",
+    "stem": "Qual palavra completa: \"O técnico realizou o ___ do equipamento danificado\"?",
+    "options": [
+      "concerto",
+      "consserto",
+      "conçerto",
+      "conserto"
+    ],
+    "answer": 3,
+    "explanation": "Conserto é reparo. Concerto é apresentação musical ou acordo.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0015",
+    "topic": "Acentuação — hiato",
+    "stem": "Em \"saúde\", por que a letra \"ú\" recebe acento?",
+    "options": [
+      "Por ser uma palavra paroxítona terminada em -em.",
+      "Por formar hiato com a vogal anterior, sendo tônica.",
+      "Por ser monossílabo tônico.",
+      "Por apresentar ditongo crescente átono."
+    ],
+    "answer": 1,
+    "explanation": "O u tônico constitui sílaba distinta da vogal anterior: sa-ú-de.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0018",
+    "topic": "Classes de palavras",
+    "stem": "Em \"Os candidatos estudaram bastante\", a palavra \"bastante\" modifica o verbo \"estudaram\" e funciona como:",
+    "options": [
+      "substantivo próprio",
+      "pronome relativo",
+      "advérbio",
+      "artigo"
+    ],
+    "answer": 2,
+    "explanation": "Bastante indica intensidade da ação de estudar, funcionando como advérbio.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0019",
+    "topic": "Período composto — coordenação",
+    "stem": "Em \"A candidata estudou e realizou o simulado\", a conjunção \"e\" liga orações de valor:",
+    "options": [
+      "alternativo",
+      "aditivo",
+      "adversativo",
+      "concessivo"
+    ],
+    "answer": 1,
+    "explanation": "E estabelece relação aditiva entre as duas ações.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0020",
+    "topic": "Período composto — causa",
+    "stem": "Em \"A prova foi adiada porque faltou energia\", a oração introduzida por \"porque\" expressa:",
+    "options": [
+      "causa",
+      "concessão",
+      "consequência",
+      "comparação"
+    ],
+    "answer": 0,
+    "explanation": "A falta de energia é apresentada como causa do adiamento.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0022",
+    "topic": "Orações subordinadas",
+    "stem": "Em \"Embora a rua estivesse molhada, o evento aconteceu\", a oração iniciada por \"Embora\" é subordinada adverbial:",
+    "options": [
+      "consecutiva",
+      "temporal",
+      "concessiva",
+      "final"
+    ],
+    "answer": 2,
+    "explanation": "A oração concessiva apresenta uma circunstância contrária à expectativa.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0023",
+    "topic": "Oração adjetiva restritiva",
+    "stem": "Em \"Os alunos que entregaram o trabalho receberam certificado\", a oração \"que entregaram o trabalho\" tem valor:",
+    "options": [
+      "condicional",
+      "restritivo",
+      "explicativo sem restrição",
+      "conclusivo"
+    ],
+    "answer": 1,
+    "explanation": "A oração delimita quais alunos receberam o certificado, sem vírgulas de explicação.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0024",
+    "topic": "Pronome relativo",
+    "stem": "Complete conforme a norma-padrão: \"O autor ___ obra venceu o prêmio participou do encontro\".",
+    "options": [
+      "cuja",
+      "cujo",
+      "que a",
+      "onde"
+    ],
+    "answer": 0,
+    "explanation": "Cuja estabelece posse e concorda com obra, substantivo feminino singular, sem artigo posterior.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0025",
+    "topic": "Regência verbal",
+    "stem": "Na norma-padrão, no sentido de \"ver\", a frase adequada é:",
+    "options": [
+      "Assistimos o filme.",
+      "Assistimos no filme.",
+      "Assistimos pelo filme.",
+      "Assistimos ao filme."
+    ],
+    "answer": 3,
+    "explanation": "Assistir, no sentido de presenciar/ver, é transitivo indireto e rege preposição a.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0026",
+    "topic": "Concordância verbal",
+    "stem": "Qual oração concorda corretamente com o sujeito posposto?",
+    "options": [
+      "Faltam dois dia para a prova.",
+      "Falta duas semanas para a prova.",
+      "Faltam dois dias para a prova.",
+      "Falta dois dias para a prova."
+    ],
+    "answer": 2,
+    "explanation": "O verbo faltar concorda com o núcleo plural do sujeito: dois dias.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0028",
+    "topic": "Concordância nominal",
+    "stem": "Assinale a alternativa adequada à norma-padrão:",
+    "options": [
+      "Seguem anexas as cópias solicitadas.",
+      "Segue anexa as cópias solicitadas.",
+      "Seguem anexo as cópias solicitadas.",
+      "Segue anexos as cópias solicitadas."
+    ],
+    "answer": 0,
+    "explanation": "Anexas concorda com cópias, feminino plural; seguem concorda com o sujeito plural.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0069",
+    "topic": "Pontuação e adjunto adverbial",
+    "stem": "Qual alternativa isola adequadamente o adjunto adverbial antecipado?",
+    "options": [
+      "Durante, a reunião de avaliação os participantes permaneceram atentos.",
+      "Durante a reunião de avaliação os participantes, permaneceram atentos.",
+      "Durante a reunião de avaliação, os participantes, permaneceram atentos.",
+      "Durante a reunião de avaliação, os participantes permaneceram atentos."
+    ],
+    "answer": 3,
+    "explanation": "O adjunto adverbial deslocado de maior extensão pode ser separado por vírgula do restante da oração.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0070",
+    "topic": "Ambiguidade",
+    "stem": "Na frase \"A pesquisadora viu a colega com binóculos\", há ambiguidade principalmente sobre:",
+    "options": [
+      "a flexão do verbo ver",
+      "o número gramatical de colega",
+      "quem estava com os binóculos",
+      "o gênero do substantivo pesquisadora"
+    ],
+    "answer": 2,
+    "explanation": "O segmento \"com binóculos\" pode caracterizar o instrumento usado pela pesquisadora ou a colega observada.",
+    "difficulty": "Difícil",
+    "reviewStatus": "revisao_editorial"
+  },
+  {
+    "id": "FP-0071",
+    "topic": "Coerência textual",
+    "stem": "No período \"O treino estava difícil, mas a equipe não desistiu\", a segunda oração estabelece:",
+    "options": [
+      "conclusão de que houve desistência",
+      "contraste em relação à dificuldade",
+      "mera repetição da primeira oração",
+      "explicação da causa do treino"
+    ],
+    "answer": 1,
+    "explanation": "A adversativa mas contrasta a dificuldade com a persistência da equipe.",
+    "difficulty": "Média",
+    "reviewStatus": "revisao_editorial"
+  }
+]
