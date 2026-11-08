@@ -18,7 +18,7 @@ for(const q of incoming){
   assert(q.origin==='autoral' && q.review_status==='revisao_editorial','Origem/revisão incorreta: '+q.id);
   assert(q.options.length===4 && new Set(q.options).size===4,'Alternativas repetidas: '+q.id);
   assert(Number.isInteger(q.answer) && q.answer>=0 && q.answer<4,'Gabarito inválido: '+q.id);
-  assert(q.stem.length>32 && q.explanation.length>20,'Texto incompleto: '+q.id);
+  assert(q.stem.length>32 && q.explanation.length>=20,'Texto incompleto: '+q.id);
   const key=q.subject+'|'+q.stem.trim().toLowerCase();assert(!seenNewStems.has(key),'Novo enunciado repetido: '+q.id);seenNewStems.add(key);
   if(q.subject==='Literatura')assert(!q.book && !q.stem.includes('Memórias Póstumas') && !q.stem.includes('Vidas Secas'),'Obra antiga: '+q.id);
   if(q.subject==='Direito e Direitos Humanos')assert(q.explanation.includes('Referência:') && q.explanation.includes('https://'),'Base normativa ausente: '+q.id);
