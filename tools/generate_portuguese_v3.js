@@ -1,0 +1,39 @@
+const generatePortuguese=function generatePortuguese(){
+let s=271108;const R=(a,b)=>{s=(Math.imul(s,1664525)+1013904223)|0;return a+(s>>>0)%(b-a+1)};
+const locF=["escola","biblioteca","secretaria","academia","delegacia","universidade","instituição","sala de leitura","oficina","agência","empresa","unidade","associação","farmácia","recepção","capital"];
+const locM=["centro","departamento","posto","quartel","pátio","estádio","escritório","laboratório","museu","auditório","hospital","arquivo","setor","ginásio","prédio","almoxarifado"];
+const people=["Ana","Bruno","Carla","Daniel","Elisa","Felipe","Gabriela","Hugo","Inês","João","Larissa","Marcos","Nina","Otávio","Paula","Rafael"];
+const groups=["candidatos","voluntários","instrutores","professores","estudantes","motoristas","monitores","organizadores","técnicos","leitores","pesquisadores","atletas","agentes","servidores","participantes","visitantes"];
+const verbs=[["chegaram","chegou","chegava","chegam"],["estudaram","estudou","estudava","estudam"],["treinaram","treinou","treinava","treinam"],["participaram","participou","participava","participam"],["trabalharam","trabalhou","trabalhava","trabalham"],["correram","correu","corria","correm"],["escreveram","escreveu","escrevia","escrevem"],["aprenderam","aprendeu","aprendia","aprendem"],["colaboraram","colaborou","colaborava","colaboram"],["viajaram","viajou","viajava","viajam"],["retornaram","retornou","retornava","retornam"],["atuaram","atuou","atuava","atuam"],["organizaram","organizou","organizava","organizam"],["registraram","registrou","registrava","registram"],["assistiram","assistiu","assistia","assistem"],["conversaram","conversou","conversava","conversam"]];
+const words=["lâmpada","médico","público","lâmina","acadêmico","número","máximo","próximo","trânsito","síntese","técnico","lógico","rápido","sílaba","histórico","física"];
+let rows=[],seen=new Set();function add(topic,stem,c,wrong,why){c=String(c);let other=[...new Set(wrong.map(String))].filter(x=>x!==c);if(other.length<3)throw Error("options: "+stem);let options=[c,...other.slice(0,3)];for(let j=3;j>0;j--){let n=R(0,j);[options[n],options[j]]=[options[j],options[n]]}if(seen.has(stem))throw Error("duplicate: "+stem);seen.add(stem);rows.push({id:"FP27-PT-"+String(rows.length+1).padStart(4,"0"),subject:"Português",topic,origin:"autoral",source_label:"Autoral · Foco PMMG 2027",year:2026,stem,options,answer:options.indexOf(c),explanation:why,difficulty:["Fácil","Média","Difícil"][R(0,2)],review_status:"revisao_editorial"})}
+for(let i=0;i<16;i++){const f=locF[i],m=locM[i],p=people[i],g=groups[i],v=verbs[i],w=words[i],bare=w.normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+add("Acentuação",`Em um comunicado da ${f}, qual é a grafia correta do substantivo proparoxítono apresentado sem acento como "${bare}"?`,w,[bare,bare+"´",bare+"^"],`O substantivo escreve-se "${w}". Todas as proparoxítonas são acentuadas.`);
+add("Crase",`A equipe dirigiu-se ___ ${f} para buscar informações. Complete conforme a norma-padrão.`,"à",["a","há","às"],`A preposição a funde-se ao artigo feminino a: dirigiu-se à ${f}.`);
+add("Preposição com artigo",`Os estudantes foram ___ ${m} para uma visita. Assinale a forma adequada.`,"ao",["à","a","aos"],`Preposição a + artigo masculino o formam ao ${m}.`);
+add("Há — tempo decorrido",`___ ${i+2} meses, ${p} começou a estudar para a prova.`,"Há",["A","À","Às"],`Para tempo já transcorrido, haver é escrito há.`);
+add("A — tempo futuro",`Daqui ___ ${i+3} dias, ${p} fará uma avaliação.`,"a",["há","à","às"],`No tempo futuro, usa-se a: daqui a ${i+3} dias.`);
+add("Por que — pergunta",`Preencha o início da pergunta: "___ ${p} chegou depois do combinado?"`,"Por que",["Porque","Por quê","Porquê"],`Em pergunta no início da frase, usa-se por que, separado e sem acento.`);
+add("Porque — explicação",`Complete a resposta: "${p} ficou em casa ___ estava doente."`,"porque",["por que","por quê","porquê"],`Porque é conjunção causal, escrita junta e sem acento.`);
+add("Por quê — fim de pergunta",`Complete: "${p} saiu antes do intervalo. Você sabe ___?"`,"por quê",["porque","por que","porquê"],`Em posição final de frase interrogativa, usa-se por quê.`);
+add("Porquê — substantivo",`Complete: "Ninguém explicou o ___ da ausência de ${p}."`,"porquê",["por que","porque","por quê"],`Precedido do artigo o, porquê é substantivo, junto e acentuado.`);
+add("Mas — adversativa",`Complete: "${p} preparou tudo, ___ faltou energia."`,"mas",["mais","más","maís"],`Mas exprime oposição, como uma conjunção adversativa.`);
+add("Mais — quantidade",`Complete: "${p} pediu ___ tempo para organizar o material da ${f}."`,"mais",["mas","más","máis"],`Mais exprime quantidade, e não oposição.`);
+add("Concordância verbal",`Complete: "Ontem, os ${g} ___ cedo." (pretérito perfeito)`,v[0],v.slice(1),`O sujeito plural os ${g} exige verbo plural no pretérito perfeito: ${v[0]}.`);
+add("Haver impessoal",`Complete: "Ontem, ___ ${i+4} solicitações na ${f}."`,"havia",["haviam","houveram","havião"],`Com sentido existencial, haver é impessoal e permanece no singular.`);
+add("Fazer — tempo decorrido",`Complete: "___ ${i+5} anos que ${p} mora nesta cidade."`,"Faz",["Fazem","Fizeram","Fazião"],`Fazer é impessoal quando indica tempo decorrido: faz ${i+5} anos.`);
+add("Colocação pronominal",`Num aviso da ${f}, complete: "Não ___ divulgar informações sigilosas sem autorização."`,"se deve",["deve-se","se deva","deve se"],`A negação não atrai o pronome átono (próclise): não se deve divulgar.`);
+add("Vocativo",`Qual é a pontuação recomendada para chamar os ${g} em um anúncio?`,`Atenção, ${g}!`,[`Atenção ${g}!`,`Atenção: ${g}!`,`Atenção. ${g}!`],`O vocativo deve ser isolado por vírgula: Atenção, ${g}!`);
+add("Sujeito simples",`Em "Os ${g} revisaram o material", identifique o sujeito.`,`Os ${g}`,["o material","revisaram","o"],`Os ${g} são os participantes que praticam a ação verbal.`);
+add("Objeto direto",`Em "${p} organizou os documentos", qual é o objeto direto?`,"os documentos",[p,"organizou","os"],`Os documentos é o complemento sem preposição exigido por organizar.`);
+add("Pronome relativo",`Complete: "A ${f} ___ ${p} esteve recentemente fica no centro."`,"onde",["cujo","quem","qual"],`Onde retoma lugar e equivale a em que.`);
+add("Pronome possessivo relativo",`Complete: "O pesquisador ___ obra foi discutida na ${f} participou do evento."`,"cuja",["cujo","que","onde"],`Cuja indica posse e concorda com obra, substantivo feminino singular.`);
+add("Relação de causa",`Em "${p} se atrasou porque o ônibus não passou", a oração introduzida por porque expressa:`, "causa",["finalidade","concessão","consequência"],`O não comparecimento do ônibus é o motivo do atraso; portanto, causa.`);
+add("Adversidade",`Em "${p} estudou muito, mas estava cansado", a palavra mas expressa:`, "oposição",["adição","conclusão","explicação"],`Mas é conector adversativo, marcando contraste.`);
+add("Metáfora",`No trecho "${p} era um farol para os ${g} em dificuldade", a figura de linguagem é:`, "metáfora",["pleonasmo","eufemismo","onomatopeia"],`Farol associa-se figuradamente a alguém que orienta, sem conectivo comparativo.`);
+add("Personificação",`No trecho "O vento sussurrou o nome de ${p} durante a noite", ocorre:`, "personificação",["metonímia","eufemismo","pleonasmo"],`O vento recebe a ação humana de sussurrar.`);
+add("Tipologia injuntiva",`Um documento da ${f} contém comandos "preencha", "assine" e "entregue". Sua tipologia predominante é:`, "injuntiva",["narrativa","descritiva","dissertativa-argumentativa"],`Os imperativos orientam ações do leitor e caracterizam a injunção.`);
+}
+if(rows.length!==400||seen.size!==400)throw Error("Portuguese count");return rows;
+};
+if(typeof module!=='undefined')module.exports=generatePortuguese;
