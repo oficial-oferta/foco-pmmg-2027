@@ -1082,7 +1082,7 @@
   {
     "id": "FP-0220",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de treinamento contém 5 linhas e 7 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de treinamento contém 5 linhas e 7 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "30",
       "35",
@@ -1097,7 +1097,7 @@
   {
     "id": "FP-0230",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de pesquisa contém 6 linhas e 8 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de pesquisa contém 6 linhas e 8 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "36",
       "14",
@@ -1112,7 +1112,7 @@
   {
     "id": "FP-0240",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de contagem contém 7 linhas e 9 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de contagem contém 7 linhas e 9 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "56",
       "63",
@@ -1127,7 +1127,7 @@
   {
     "id": "FP-0250",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de estatística contém 8 linhas e 10 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de estatística contém 8 linhas e 10 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "64",
       "18",
@@ -1142,7 +1142,7 @@
   {
     "id": "FP-0260",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de planejamento contém 9 linhas e 11 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de planejamento contém 9 linhas e 11 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "90",
       "99",
@@ -1157,7 +1157,7 @@
   {
     "id": "FP-0270",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de logística contém 10 linhas e 12 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de logística contém 10 linhas e 12 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "100",
       "22",
@@ -1172,7 +1172,7 @@
   {
     "id": "FP-0280",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de formação contém 11 linhas e 13 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de formação contém 11 linhas e 13 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "132",
       "143",
@@ -1187,7 +1187,7 @@
   {
     "id": "FP-0290",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de controle contém 12 linhas e 14 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de controle contém 12 linhas e 14 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "144",
       "26",
@@ -1202,7 +1202,7 @@
   {
     "id": "FP-0300",
     "topic": "Princípio da contagem",
-    "stem": "Um painel em uma atividade de avaliação contém 13 linhas e 15 colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
+    "stem": "Um painel em uma atividade de avaliação contém 13 linhas e 15 colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?",
     "options": [
       "182",
       "195",
