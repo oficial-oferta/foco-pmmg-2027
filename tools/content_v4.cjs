@@ -15,8 +15,10 @@ function build(){
  ];
  const map=new Map([...legacy,...generated].map(q=>[q.id,q]));
  patch(map,reviewMain);patch(map,legacyChanges);
+ const grammarReview=require('./review_english_grammar_v4.js')(base('english'));
+ patch(map,grammarReview);
  const estimate=require('./difficulty_v4.cjs');
  for(const [id,q] of map)if(id.startsWith('FP27-'))map.set(id,{...q,difficulty:estimate(q)});
- return {questions:[...map.values()],legacy,generated,reviewMain,legacyChanges};
+ return {questions:[...map.values()],legacy,generated,reviewMain,legacyChanges,grammarReview};
 }
 module.exports={build};
