@@ -13,7 +13,7 @@ const reviewLegacyMath=function reviewLegacyMath(base){
  if(h===5){let v=a+b,p=a*b;add(q,"Equação do segundo grau",`No estudo ${ctx}, a equação x² − ${v}x + ${p}=0 foi apresentada. Qual é a soma das raízes?`,v,[p,-v,a-b],`As raízes são ${a} e ${b}. A soma equivale a ${v} pelo teorema de Viète.`)}
  if(h===6){let k=n+8,v=k*(k+1)/2;add(q,"Somatório de inteiros",`Considere a soma de todos os números inteiros positivos de 1 até ${k}, ${ctx}. Qual é o resultado?`,v,[k*k,k*(k-1)/2,k+1],`A soma é n(n+1)/2=${k}×${k+1}/2=${v}.`)}
  if(h===7){let vals=[n+1,n+4,n+7,n+10],v=vals.reduce((x,y)=>x+y,0)/4;add(q,"Média aritmética",`Em ${ctx}, quatro valores foram ${vals.join(", ")}. Qual é a média aritmética?`,v,[vals.reduce((x,y)=>x+y,0),(vals[0]+vals[3])/2+1,v+2],`Média=(${vals.join("+")})/4=${fmt(v)}.`)}
- if(h===8){let v=a*(b-1);add(q,"Princípio da contagem",`Um painel ${ctx} contém ${a} linhas e ${b} colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?`,v,[a*b,a*(b-2),a+b],`Total ${a}×${b}, menos ${a} da primeira coluna: ${v}.`)}
+ if(h===8){let v=a*(b-1);add(q,"Princípio da contagem",`Um painel ${ctx} contém ${a} linhas e ${b} colunas de lâmpadas. Inicialmente, todas estavam acesas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?`,v,[a*b,a*(b-2),a+b],`Total ${a}×${b}, menos ${a} da primeira coluna: ${v}.`)}
  }
  if(out.length!==81)throw Error("math 81");return out;
 };
