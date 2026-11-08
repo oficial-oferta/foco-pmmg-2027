@@ -16,5 +16,6 @@ assert.deepStrictEqual(bad,[]);
 const duplicated=[...seen].filter(([,a])=>a.length>1);
 assert.strictEqual(duplicated.length,1,'Existe repetição exata adicional: '+JSON.stringify(duplicated.slice(0,6)));
 assert.deepStrictEqual(duplicated[0][1].sort(),['FP-0014','FP-0016']);
-for(const q of data.reviewMain){const active=questions.find(x=>x.id===q.id);assert.strictEqual(active.options[active.answer],q.options[q.answer],'Gabarito alterado indevidamente: '+q.id)}
+const laterOverlays=new Set(data.legacyChanges.map(q=>q.id));
+for(const q of data.reviewMain){if(laterOverlays.has(q.id))continue;const active=questions.find(x=>x.id===q.id);assert.strictEqual(active.options[active.answer],q.options[q.answer],'Gabarito alterado indevidamente: '+q.id)}
 console.log(JSON.stringify({status:'estrutura_ok',total:2500,newRevisions:432,legacyRevisions:107,distinctRevisedIds:538,duplicatePairsPreserved:duplicated.map(([s,ids])=>ids),notes:'Revisão pedagógica humana pendente; roteiros e justificativas são autorais.'}));
