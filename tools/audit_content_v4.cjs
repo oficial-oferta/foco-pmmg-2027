@@ -1,7 +1,8 @@
 'use strict';const assert=require('assert');const {build}=require('./content_v4.cjs');
 const data=build(),questions=data.questions;
 assert.strictEqual(questions.length,2500);assert.strictEqual(new Set(questions.map(q=>q.id)).size,2500);
-assert.strictEqual(data.reviewMain.length,432);assert.strictEqual(data.legacyChanges.length,107);
+assert.strictEqual(data.reviewMain.length,432);
+assert.strictEqual(data.grammarReview.length,80);assert.strictEqual(data.legacyChanges.length,107);
 const subjects=['Português','Inglês','Literatura','Direito e Direitos Humanos','Raciocínio Lógico-Matemático'];
 for(const s of subjects)assert.strictEqual(questions.filter(q=>q.subject===s).length,500,s+' não possui 500');
 const seen=new Map(),bad=[];
@@ -18,4 +19,4 @@ assert.strictEqual(duplicated.length,1,'Existe repetição exata adicional: '+JS
 assert.deepStrictEqual(duplicated[0][1].sort(),['FP-0014','FP-0016']);
 const laterOverlays=new Set(data.legacyChanges.map(q=>q.id));
 for(const q of data.reviewMain){if(laterOverlays.has(q.id))continue;const active=questions.find(x=>x.id===q.id);assert.strictEqual(active.options[active.answer],q.options[q.answer],'Gabarito alterado indevidamente: '+q.id)}
-console.log(JSON.stringify({status:'estrutura_ok',total:2500,newRevisions:432,legacyRevisions:107,distinctRevisedIds:538,duplicatePairsPreserved:duplicated.map(([s,ids])=>ids),notes:'Revisão pedagógica humana pendente; roteiros e justificativas são autorais.'}));
+console.log(JSON.stringify({status:'estrutura_ok',total:2500,newRevisions:432,englishGrammar:80,legacyRevisions:107,distinctRevisedIds:618,duplicatePairsPreserved:duplicated.map(([s,ids])=>ids),notes:'Revisão pedagógica humana pendente; roteiros e justificativas são autorais.'}));
