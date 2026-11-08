@@ -24,6 +24,8 @@ for(const q of incoming){
   if(q.subject==='Direito e Direitos Humanos')assert(q.explanation.includes('Referência:') && q.explanation.includes('https://'),'Base normativa ausente: '+q.id);
 }
 for(const s of subjects)assert.strictEqual(all.filter(q=>q.subject===s).length,500,'Meta não atingida: '+s);
+if(require.main===module){
 console.log('AUDITORIA ESTRUTURAL OK — 2.500 questões no total, 500 por matéria.');
 console.log('Base anterior: 500; expansão nova: 2.000. Todas ainda são beta editorial.');
 console.log('ALERTA: revisão pedagógica humana, conteúdo jurídico atualizado e detecção semântica de repetições ainda são necessários.');
+}
