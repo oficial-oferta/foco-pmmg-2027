@@ -1,0 +1,20 @@
+const reviewLegacyMath=function reviewLegacyMath(base){
+ const rows=base.filter(q=>q.subject==="Raciocínio Lógico-Matemático"),norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\d+([,.]\d+)?/g,"#").replace(/[^a-z0-9# ]/g," ").replace(/\s+/g," ").trim(),group=new Map();
+ for(const q of rows){let key=norm(q.stem),a=group.get(key)||[];a.push(q);group.set(key,a)}
+ const sets=[...group.values()].filter(a=>a.length>1).sort((a,b)=>a[0].id.localeCompare(b[0].id));if(sets.length!==9||sets.some(a=>a.length!==10))throw Error("Math legacy layout changed");
+ const out=[],fmt=x=>typeof x==="string"?x:Number.isInteger(x)?String(x):String(Number(x.toFixed(2))).replace(".",","),gcd=(a,b)=>b?gcd(b,a%b):a;
+ function add(q,topic,stem,c,wrong,explanation){let ans=fmt(c),opts=[ans,...new Set(wrong.map(fmt))].filter(x=>x!==ans);for(let j=1;opts.length<4;j++){let w=typeof c==="number"?fmt(c+2*j):`${j}/${j+2}`;if(!opts.includes(w))opts.push(w)}opts=opts.slice(0,4);let off=Number(q.id.slice(-4))%4;opts=opts.slice(off).concat(opts.slice(0,off));out.push({...q,topic,stem,options:opts,answer:opts.indexOf(ans),explanation,difficulty:topic.includes("Probabilidade")||topic.includes("Arranjos")?"Difícil":"Média",reviewStatus:"revisao_editorial"})}
+ for(let h=0;h<9;h++)for(let j=0;j<9;j++){let q=sets[h][j+1],n=j+2,a=n+3,b=n+5,c=n+7,ctx=`em uma atividade de ${["treinamento","pesquisa","contagem","estatística","planejamento","logística","formação","controle","avaliação"][j]}`;
+ if(h===0){let v=a*b*c;add(q,"Princípio multiplicativo",`Para compor um código ${ctx}, há ${a} opções para o primeiro campo, ${b} para o segundo e ${c} para o terceiro. Quantos códigos distintos podem ser formados?`,v,[a+b+c,a*b,a*b+c],`As escolhas independentes se multiplicam: ${a}×${b}×${c}=${v}.`)}
+ if(h===1){let v=a+c;add(q,"Interpretação de tabela",`Uma tabela ${ctx} registra: setor A=${a}, B=${b}, C=${c} e D=${n}. Qual é a soma dos setores A e C?`,v,[a+b,b+c,a+n],`Somando A e C, temos ${a}+${c}=${v}.`)}
+ if(h===2){let v=a*b*c;add(q,"Volume de bloco retangular",`Uma caixa ${ctx} mede ${a} cm por ${b} cm por ${c} cm. Qual é o volume em cm³?`,v,[a*b,2*(a*b+b*c+a*c),a+b+c],`Volume = comprimento×largura×altura = ${a}×${b}×${c}=${v} cm³.`)}
+ if(h===3){let v=a*(a-1)*(a-2);add(q,"Arranjos sem repetição",`Uma senha ${ctx} terá 3 caracteres ordenados escolhidos entre ${a} símbolos distintos, sem repetição. Quantas senhas podem ser formadas?`,v,[a**3,a*(a-1),a*(a-1)*(a-2)/6],`Arranjo de 3 dentre ${a}: ${a}×${a-1}×${a-2}=${v}.`)}
+ if(h===4){let red=a,blue=b,total=a+b,num=red*(red-1),den=total*(total-1),div=gcd(num,den),v=`${num/div}/${den/div}`;add(q,"Probabilidade sem reposição",`Numa urna ${ctx}, há ${red} bolas vermelhas e ${blue} azuis. Ao retirar 2 bolas sem reposição, qual é a probabilidade de ambas serem vermelhas?`,v,[`${red}/${total}`,`${red**2}/${total**2}`,`${red*(red-1)}/${total**2}`],`Probabilidade=${red}/${total}×${red-1}/${total-1}=${v}.`)}
+ if(h===5){let v=a+b,p=a*b;add(q,"Equação do segundo grau",`No estudo ${ctx}, a equação x² − ${v}x + ${p}=0 foi apresentada. Qual é a soma das raízes?`,v,[p,-v,a-b],`As raízes são ${a} e ${b}. A soma equivale a ${v} pelo teorema de Viète.`)}
+ if(h===6){let k=n+8,v=k*(k+1)/2;add(q,"Somatório de inteiros",`Considere a soma de todos os números inteiros positivos de 1 até ${k}, ${ctx}. Qual é o resultado?`,v,[k*k,k*(k-1)/2,k+1],`A soma é n(n+1)/2=${k}×${k+1}/2=${v}.`)}
+ if(h===7){let vals=[n+1,n+4,n+7,n+10],v=vals.reduce((x,y)=>x+y,0)/4;add(q,"Média aritmética",`Em ${ctx}, quatro valores foram ${vals.join(", ")}. Qual é a média aritmética?`,v,[vals.reduce((x,y)=>x+y,0),(vals[0]+vals[3])/2+1,v+2],`Média=(${vals.join("+")})/4=${fmt(v)}.`)}
+ if(h===8){let v=a*(b-1);add(q,"Princípio da contagem",`Um painel ${ctx} contém ${a} linhas e ${b} colunas de lâmpadas. Toda a primeira coluna foi desligada. Quantas lâmpadas permanecem acesas?`,v,[a*b,a*(b-2),a+b],`Total ${a}×${b}, menos ${a} da primeira coluna: ${v}.`)}
+ }
+ if(out.length!==81)throw Error("math 81");return out;
+};
+if(typeof module!=='undefined')module.exports=reviewLegacyMath;
