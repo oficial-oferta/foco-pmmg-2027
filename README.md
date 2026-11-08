@@ -1,5 +1,7 @@
 # FOCO PMMG 2027
 
+> **ATUALIZAÇÃO 08/11/2026 — BANCO V3:** O Supabase exclusivo `sjzsbcrvronnqoljzzro` foi conferido com **2.500 questões ativas (500 por disciplina)**: 500 originais da V1 + 2.000 novas questões autorais. **Todas as 2.500 ainda estão marcadas como beta editorial**, não como questões oficiais. Há variações de conceitos e repetições na base V1. Simulados com cadernos/gabaritos oficiais continuam em aba separada (140 itens de 3 edições). **Questões reais de concursos não foram adicionadas ao banco principal nesta atualização.**
+
 Aplicativo web mobile-first para questões de Soldado da Polícia Militar de Minas Gerais (CFSd/QP-PM). **Projeto independente e não oficial da PMMG**.
 
 ## Status da V1
@@ -96,3 +98,21 @@ O projeto do Foco PMMG `sjzsbcrvronnqoljzzro` recebeu um aviso de possível paus
 Workflow GitHub Actions: [Saúde do Supabase](.github/workflows/supabase-healthcheck.yml), agendado para **06:23, 12:23 e 18:23** (America/Sao_Paulo). Faz uma única consulta REST pública e falha se o endpoint estiver inacessível ou devolver conteúdo inesperado. Não precisa de senha nem chave de administração; utiliza somente a chave pública existente no frontend. Consulte a aba Actions para conferir execuções e eventuais falhas.
 
 **Limitações:** a documentação Supabase diz que algumas consultas diárias normalmente bastam para evitar a pausa por baixa atividade, mas não garante que qualquer check seja suficiente. O GitHub pode atrasar/omitir algumas execuções e desativa workflows agendados em repositórios públicos sem atividade por 60 dias. O plano pago Pro é a única prevenção garantida contra pausa automática por inatividade. O monitor **não substitui** uso real nem backup de dados.
+
+## Banco V3 — expansão em 08/11/2026
+
+O backend PostgreSQL possui 500 questões ativas em cada disciplina: Português, Literatura, Inglês, Direito e Direitos Humanos e Raciocínio Lógico-Matemático. O endpoint REST é paginado em lotes de 500 linhas; caso o usuário se autentique, o aplicativo carrega as 2.500 (antes havia limite de 2.000). Modo de demonstração ainda utiliza o arquivo público antigo `data/questions.json` com 500 questões apenas.
+
+### Código-fonte editorial
+
+- `tools/generate_math_v3.js`: 400 itens de 25 assuntos matemáticos gerados com cálculo determinístico.
+- `tools/generate_english_v3.js`: 400 exercícios de 25 assuntos de gramática/vocabulário/leitura em inglês.
+- `tools/generate_portuguese_v3.js`: 400 exercícios de 25 assuntos de língua portuguesa.
+- `tools/generate_literature_v3.js`: 400 exercícios de Literatura geral sem obras indicadas em editais antigos.
+- `tools/generate_law_v3.js`: 400 exercícios de identificação de normas com 80 tópicos da CF/88, DUDH e CADH e referências oficiais nas explicações. **São exercícios autorais de reconhecimento de normas, com variações por tópico. Não foram transcritos de concurso.**
+- `node tools/audit_expansion_v3.cjs`: verifica quantidade, alternativas, IDs, enunciados idênticos na expansão e metadados, **não** revisa individualmente conteúdo.
+- `node tools/export_expansion_v3.cjs > supabase/expansion_v3.sql`: reconstrói migração idempotente a partir dos geradores; os 2.000 registros foram importados no Supabase via SQL seguro e conferidos.
+
+**Prioridades de revisão:** checar ambiguidades de gabarito e das explicações, fazer exercícios jurídicos situacionais em vez de apenas reconhecimento de normas, revisar ortografia/gramática, reduzir repetição semântica, ajustar dificuldade e substituir itens didáticos por questões autênticas licenciadas e com gabarito definitivo. O acervo não deve ser apresentado como 2.500 questões de concurso nem como pedagogicamente validado.
+
+**Usuários:** o painel Administração → Criar novo acesso chama a Edge Function `manage-users` com JWT autenticado e perfil administrativo no servidor; ela cria usuário estudante e perfil individual. Não usar cadastro público no Supabase Auth. Teste real de criação deve ser conferido pelo administrador com a conta do amigo, nunca compartilhando senha aqui.
