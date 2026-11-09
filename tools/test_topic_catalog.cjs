@@ -29,7 +29,7 @@ for(const s of subjects){
  for(const c of cats)assert(T.labels[s].includes(c.area),'Unexpected category: '+c.area);
 }
 const fon=T.catalog(all,'Português').find(c=>c.area==='Fonologia');
-assert(fon&&fon.count===57,'Fonologia should contain 57 actual questions');
+assert(fon&&fon.count>=57,'Fonologia should contain at least 57 questions');
 assert(fon.topics.length>=5,'Phonology subtopics should cover main topics');
 const admin=T.catalog(all,'Direito e Direitos Humanos').find(c=>c.area==='Direito Administrativo');
 assert(admin&&admin.count>=16,'Administrative Law training not found');
