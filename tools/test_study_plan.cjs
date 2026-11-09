@@ -8,7 +8,7 @@ assert(P,'O módulo de planejamento não carregou.');
 assert.deepStrictEqual(Array.from(P.DEFAULT),[180,180,180,180,180,300,300]);
 const monday='2026-11-09',days=P.slotsForWeek(monday,P.DEFAULT);
 assert.strictEqual(days.length,7);
-assert.deepStrictEqual(days.map(x=>x.blocks.map(b=>b.minutes)),[[90,90],[90,60,30],[90,60,30],[90,60,30],[90,60,30],[120,120,60],[60,60,180]]);
+assert.deepStrictEqual(JSON.parse(JSON.stringify(days.map(x=>x.blocks.map(b=>b.minutes)))),[[90,90],[90,60,30],[90,60,30],[90,60,30],[90,60,30],[120,120,60],[60,60,180]]);
 assert.strictEqual(days.reduce((s,x)=>s+x.minutes,0),1500);
 for(let d=0;d<7;d++)for(let total=0;total<=600;total+=30){
  const blocks=P.dayBlocks(d,total);
