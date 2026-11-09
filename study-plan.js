@@ -81,7 +81,7 @@ function summary(completions,minutes,monday){
     const m=marked(completions,day.date,b.index,b.subject);
     if(m){done+=Math.min(b.minutes,Number(m.minutes_completed)||b.minutes);completed++}
   }
-  return {goal,done,blocks,completed,pct:goal?Math.round(done/goal*100):100,days};
+  return {goal,done,blocks,completed,pct:goal?Math.round(done/goal*100):0,days};
 }
 function color(subject){return COLORS[subject]||'#70b3f4'}
 function formatDate(date){const [y,m,d]=date.split('-');return d+'/'+m}
@@ -90,7 +90,7 @@ function blockMarkup(b,day,completions,today){
   const title=escapeHTML(b.subject),short=escapeHTML(b.title);
   return `<div class="plan-block ${done?'is-done':''}">
     <div class="plan-subject-mark" style="background:${color(b.subject)}"></div>
-    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small></div>
+    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small><button type="button" class="plan-train-link" data-action="${b.subject==='Simulado PMMG'?'nav:simulados':'practice:'+escapeHTML(b.subject)}">${b.subject==='Simulado PMMG'?'Abrir simulados':'Praticar questões'} ↗</button></div>
     <button type="button" class="plan-check ${done?'checked':''}" data-action="plan:toggle:${day.date}:${b.index}" aria-pressed="${done}" ${locked?'disabled title="Disponível somente no dia ou depois"':''} aria-label="${done?'Desmarcar':'Marcar'} ${title}">
       ${done?'✓':'○'}<span>${done?'Feito':'Marcar'}</span>
     </button>
