@@ -26,6 +26,8 @@ jobs:
         run: node tools/test_study_plan.cjs
       - name: Auditar catálogo de tópicos, novas questões e proporção do treino misto
         run: node tools/test_topic_catalog.cjs
+      - name: Auditar 687 novas questões de Português e Matemática
+        run: node tools/audit_50_topics_batch1.cjs
       - name: Preparar somente frontend (nao publicar dados nem SQL)
         run: |
           mkdir -p _site/assets _site/data
