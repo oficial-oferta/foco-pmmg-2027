@@ -133,7 +133,7 @@ const buildMath50=function buildMath50(){
     if(f===0)emit(topic,`Os resultados ordenados de um teste foram ${min}, ${min+3}, ${min+7}, ${max}. Qual é a amplitude total?`,span,`Amplitude = máximo − mínimo = ${max}−${min}=${span}`,'',2);
     if(f===1)emit(topic,`O menor valor de uma amostra foi ${min} e o maior foi ${max}. Qual é a amplitude?`,span,`Maior valor menos o menor = ${max}−${min}=${span}`,'',2);
     if(f===2)emit(topic,`Após acrescentar o resultado ${max} a um grupo que tinha mínimo ${min} e máximo ${max-2}, a amplitude passou a valer quanto?`,span,`A amplitude final é ${max}−${min}=${span}`,'',2);
-    if(f===3)emit(topic,`Uma medição variou entre ${min} e ${max}. Qual a diferença entre o maior e o menor valor?`,span,`${max}−${min}=${span}`,'',2);
+    if(f===3)emit(topic,`Uma medição variou entre ${min} e ${max}. Qual a diferença entre o maior e o menor valor?`,span,`A amplitude é o maior valor menos o menor: ${max}−${min}=${span}`,'',2);
    }
    else if(topic==='Somatório de inteiros'){
     const n=10+i,start=2+(i%5),end=n+start,sum=(n+1)*(start+end)/2;
