@@ -27,7 +27,7 @@ const buildMath50=function buildMath50(){
     if(f===0)emit(topic,`Em um grupo de ${total} participantes ${ct}, ${rate}% concluíram a etapa. Quantos concluíram?`,part,`${rate}% de ${total} = ${total} × ${rate}/100 = ${part}`, '',5);
     if(f===1)emit(topic,`De ${total} registros analisados ${ct}, ${part} cumpriram o requisito. Que porcentagem dos registros foi aprovada?`,rate,`${part}/${total} × 100 = ${rate}%`,'%',5);
     if(f===2)emit(topic,`O planejamento previa cumprir ${rate}% de ${total} tarefas ${ct}. Qual é a quantidade prevista?`,part,`${total} × ${rate}/100 = ${part}`,'',5);
-    if(f===3){let done=Math.max(0,part-10);emit(topic,`Uma turma precisava alcançar ${rate}% de ${total} atividades. Já completou ${done}. Quantas atividades faltam para a meta?`,part-done,`A meta é ${part}; subtraindo ${done}, faltam ${part-done}`,'',2)}
+    if(f===3){let done=Math.max(0,part-(5+5*(i%5)));emit(topic,`Uma turma precisava alcançar ${rate}% de ${total} atividades. Já completou ${done}. Quantas atividades faltam para a meta?`,part-done,`A meta é ${part}; subtraindo ${done}, faltam ${part-done}`,'',2)}
    }
    else if(topic==='Acréscimo percentual'||topic==='Desconto percentual'){
      const plus=topic==='Acréscimo percentual',origin=100+20*i,rate=10+5*(i%7),variation=origin*rate/100,final=origin+(plus?variation:-variation),verb=plus?'aumentou':'diminuiu',c=plus?'acréscimo':'desconto';
