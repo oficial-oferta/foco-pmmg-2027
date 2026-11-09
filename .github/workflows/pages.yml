@@ -22,10 +22,12 @@ jobs:
         run: node tools/audit_expansion_v3.cjs
       - name: Auditar as 2.500 questões após a revisão editorial V4
         run: node tools/audit_content_v4.cjs
+      - name: Testar cronograma, alocação de horas, ofensiva e interface
+        run: node tools/test_study_plan.cjs
       - name: Preparar somente frontend (nao publicar dados nem SQL)
         run: |
           mkdir -p _site/assets _site/data
-          cp index.html styles.css app.js v2-premium.js official-exams.js config.js sw.js manifest.webmanifest _site/
+          cp index.html styles.css study-plan.css app.js v2-premium.js study-plan.js official-exams.js config.js sw.js manifest.webmanifest _site/
           cp assets/icon.svg assets/sample-questions.json _site/assets/
           cp data/questions.json data/reviewed-legacy-overrides.json _site/data/
           touch _site/.nojekyll
