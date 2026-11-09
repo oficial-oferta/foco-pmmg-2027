@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
-const js=fs.readFileSync('topic-catalog.js','utf8'),basic=JSON.parse(fs.readFileSync('data/questions.json','utf8')),extra=JSON.parse(fs.readFileSync('data/topic-extras-v1.json','utf8'));
+const js=fs.readFileSync('topic-catalog.js','utf8'),basic=require('./content_v4.cjs').build().questions,extra=JSON.parse(fs.readFileSync('data/topic-extras-v1.json','utf8'));
 const global={window:{}};
 vm.runInNewContext(js,global);
 const T=global.window.FOCO_TOPICS;
