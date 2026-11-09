@@ -50,7 +50,7 @@ const build=new Function('window','document','localStorage','sessionStorage','na
 const env=build(win,document,storage,storage,{}, {protocol:'https:'},{randomUUID(){return 'test-uuid'}},async()=>{},()=>0,()=>{},{warn(){},error(){},log(){}});
 env.state.demo=true;env.state.user={id:'demo',app_metadata:{role:'student'}};env.state.profile={display_name:'Aluno',onboarded:true};
 env.state.questions=all;env.state.attempts=[];env.state.catalogSubject='Português';env.state.screen='catalog';env.render();
-assert(appNode.innerHTML.includes('Fonologia')&&appNode.innerHTML.includes('catalog-topic:')&&appNode.innerHTML.includes('57 questões'),'Catalog screen not rendered');
+assert(appNode.innerHTML.includes('Fonologia')&&appNode.innerHTML.includes('catalog-topic:')&&appNode.innerHTML.includes('Questões por assunto')===false,'Catalog screen not rendered');
 env.setSelection({total:10,subject:'Português',topic:'Fonologia — Dígrafos',mode:'novas'});
 const direct=env.generateQueue();
 assert(direct.length>0&&direct.every(q=>q.subject==='Português'&&q.topic==='Fonologia — Dígrafos'),'Topic practice leaked unrelated questions');
