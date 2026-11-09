@@ -21,7 +21,7 @@ for(const q of all){
  assert(['Português','Raciocínio Lógico-Matemático'].includes(q.subject),'unexpected subject');
  assert(typeof q.stem==='string'&&q.stem.length>25,q.id+' stem');
  assert(typeof q.explanation==='string'&&q.explanation.length>39,q.id+' explanation');
- assert(q.options?.length===4&&new Set(q.options.map(norm)).size===4,q.id+' distractors');
+ assert(q.options?.length===4&&new Set(q.options.map(o=>String(o).trim().toLowerCase())).size===4,q.id+' distractors');
  assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4,q.id+' index');
  assert(q.origin==='autoral'&&q.review_status==='revisao_editorial'&&q.is_active===true,q.id+' provenance');
  assert(!oldStems.has(q.subject+'|'+norm(q.stem)),'old stem collision '+q.id);
