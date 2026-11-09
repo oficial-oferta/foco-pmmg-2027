@@ -1,5 +1,5 @@
-const CACHE='foco-pmmg-shell-v6';
-const ASSETS=['./','./index.html','./styles.css','./app.js','./v2-premium.js','./official-exams.js','./config.js','./manifest.webmanifest','./assets/icon.svg','./assets/sample-questions.json','./data/questions.json','./data/reviewed-legacy-overrides.json'];
+const CACHE='foco-pmmg-shell-v7';
+const ASSETS=['./','./index.html','./styles.css','./study-plan.css','./app.js','./v2-premium.js','./study-plan.js','./official-exams.js','./config.js','./manifest.webmanifest','./assets/icon.svg','./assets/sample-questions.json','./data/questions.json','./data/reviewed-legacy-overrides.json'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const url=new URL(event.request.url);if(url.origin!==self.location.origin||url.pathname.endsWith('/config.js'))return;event.respondWith(fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();const cached=new URL(event.request.url).pathname;const known=ASSETS.map(path=>new URL(path,self.registration.scope).pathname);if(known.includes(cached))caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response}).catch(()=>caches.match(event.request)));});
