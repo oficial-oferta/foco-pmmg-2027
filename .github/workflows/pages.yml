@@ -24,12 +24,14 @@ jobs:
         run: node tools/audit_content_v4.cjs
       - name: Testar cronograma, alocação de horas, ofensiva e interface
         run: node tools/test_study_plan.cjs
+      - name: Auditar catálogo de tópicos, novas questões e proporção do treino misto
+        run: node tools/test_topic_catalog.cjs
       - name: Preparar somente frontend (nao publicar dados nem SQL)
         run: |
           mkdir -p _site/assets _site/data
-          cp index.html styles.css study-plan.css app.js v2-premium.js study-plan.js official-exams.js config.js sw.js manifest.webmanifest _site/
+          cp index.html styles.css study-plan.css topic-catalog.css app.js v2-premium.js study-plan.js topic-catalog.js official-exams.js config.js sw.js manifest.webmanifest _site/
           cp assets/icon.svg assets/sample-questions.json _site/assets/
-          cp data/questions.json data/reviewed-legacy-overrides.json _site/data/
+          cp data/questions.json data/reviewed-legacy-overrides.json data/topic-extras-v1.json _site/data/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
