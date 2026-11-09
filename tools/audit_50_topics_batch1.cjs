@@ -33,11 +33,12 @@ for(const q of all){
   assert(q.explanation.includes(numericLabel(q.__check.answer,q.__check.unit)),q.id+' mismatched explanation');
   // Auditoria independente adicional da fórmula de soma de uma sequência de inteiros.
   if(q.topic==='Somatório de inteiros'){
-   const nums=Array.from(q.stem.matchAll(/\d+/g),m=>Number(m[0]));
-   if(q.stem.includes('até')||q.stem.includes(' a ')){
-    const begin=nums[0],end=nums[1];
-    if(begin!=null&&end!=null)assert.strictEqual(q.__check.answer,((end-begin+1)*(begin+end))/2,q.id+' independent series sum');
-   }
+   const range=q.stem.match(/de (\d+) (?:até|a) (\d+)/);
+   const sequence=q.stem.match(/a (\d+)\+(\d+)\+…\+(\d+)/);
+   const begin=range?Number(range[1]):sequence?Number(sequence[1]):null;
+   const end=range?Number(range[2]):sequence?Number(sequence[3]):null;
+   assert(begin!==null&&end!==null,q.id+' series syntax not audited');
+   assert.strictEqual(q.__check.answer,((end-begin+1)*(begin+end))/2,q.id+' independent series sum');
   }
  }else {
   assert(q.subject==='Português',q.id+' missing math check');
