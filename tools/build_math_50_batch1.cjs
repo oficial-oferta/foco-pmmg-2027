@@ -125,7 +125,7 @@ const buildMath50=function buildMath50(){
     const n=5+(i%11),k=i%2?3:2,result=A(n,k);
     if(f===0)emit(topic,`Em uma competição com ${n} finalistas, de quantas maneiras podem ser definidos ${k} lugares distintos do pódio?`,result,`Como a ordem importa, A(${n},${k})=${result}`,'',2);
     if(f===1)emit(topic,`De ${n} servidores, quantas designações ordenadas para ${k} funções diferentes podem ser feitas sem repetir pessoa?`,result,`Arranjo simples: ${n}!/(${n}−${k})! = ${result}`,'',2);
-    if(f===2)emit(topic,`Uma lista de ${n} participantes permite escolher ${k} para cargos de coordenador, auxiliar e outras funções distintas. Quantos resultados ordenados existem?`,result,`A ordem das funções diferencia as escolhas, então o total é A(${n},${k})=${result}`,'',2);
+    if(f===2)emit(topic,`Uma lista de ${n} participantes permite escolher ${k} para ${k} funções distintas. Quantos resultados ordenados existem?`,result,`A ordem das funções diferencia as escolhas, então o total é A(${n},${k})=${result}`,'',2);
     if(f===3)emit(topic,`Em um processo com ${n} candidatos, quantos resultados ordenados de ${k} posições podem ser formados sem repetição?`,result,`Trata-se de arranjo de ${n} tomados ${k} a ${k}: ${result}`,'',2);
    }
    else if(topic==='Estatística — Amplitude'){
@@ -136,7 +136,7 @@ const buildMath50=function buildMath50(){
     if(f===3)emit(topic,`Uma medição variou entre ${min} e ${max}. Qual a diferença entre o maior e o menor valor?`,span,`${max}−${min}=${span}`,'',2);
    }
    else if(topic==='Somatório de inteiros'){
-    const n=10+i,start=2+(i%5),end=n+start,sum=n*(start+end)/2;
+    const n=10+i,start=2+(i%5),end=n+start,sum=(n+1)*(start+end)/2;
     if(f===0)emit(topic,`Qual é a soma de todos os números inteiros de ${start} até ${end}, inclusive?`,sum,`Há ${n+1} termos; soma=(${start}+${end})×${n+1}/2`, '',5);
     if(f===1)emit(topic,`Num exercício, somam-se os inteiros consecutivos de ${start} a ${end}. Qual é o total?`,sum,`O número de parcelas é ${end-start+1}; a soma é (${start}+${end})×${end-start+1}/2`, '',5);
     if(f===2)emit(topic,`Uma tabela registra uma unidade para cada número de ${start} até ${end}. Qual é a soma desses números consecutivos?`,sum,`Progressão aritmética: S=(${start}+${end})×${end-start+1}/2`, '',5);
