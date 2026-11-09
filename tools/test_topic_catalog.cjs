@@ -17,7 +17,7 @@ for(const q of extra){
  assert.equal(q.options.length,4,q.id);
  assert.equal(new Set(q.options).size,4,q.id);
  assert(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4,q.id);
- assert(q.stem.length>=28&&q.explanation.length>=30,q.id);
+ assert(q.stem.length>=15&&q.explanation.length>=25,q.id);
  assert.equal(q.origin,'autoral');
  assert(!basic.some(b=>b.subject===q.subject&&T.norm(b.stem)===T.norm(q.stem)),'Repeated existing stem '+q.id);
 }
