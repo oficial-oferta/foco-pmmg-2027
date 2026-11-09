@@ -67,3 +67,5 @@
 @media(min-width:1260px){.plan-week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.plan-week-grid{grid-template-columns:1fr}.plan-hours-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-kpis{gap:5px}.plan-kpis>div{padding:10px}.plan-kpis strong{font-size:21px}.plan-day-card{padding:14px}.plan-hero{padding:20px}.plan-streak{min-width:87px;padding:12px 8px}.plan-hero-header p{font-size:12px}.plan-toolbar-actions .btn{padding:9px 10px}}
 @media(max-width:390px){.plan-streak{min-width:75px}.plan-streak small{font-size:9px}.plan-kpis span{font-size:10px}.plan-toolbar-actions{width:100%;justify-content:space-between}.plan-hero h1{font-size:25px}.plan-block{gap:6px;padding:9px 6px}.plan-check{min-width:59px;flex-basis:59px}}
+
+.plan-train-link{background:none;border:0;padding:4px 0 0;width:max-content;max-width:100%;font-size:11px;font-weight:750;color:#88d7cb;text-align:left}.plan-train-link:hover{color:#c4fff2;text-decoration:underline;transform:none!important}
