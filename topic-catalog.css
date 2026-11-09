@@ -1,0 +1,44 @@
+
+/* Foco PMMG · catálogo de assuntos V1 */
+.topic-layout{max-width:1090px;margin:0 auto;padding-bottom:34px;gap:20px}
+.topic-hero{background:linear-gradient(125deg,#17374e 0%,#102439 75%);border:1px solid rgba(106,209,198,.24);border-radius:23px;padding:clamp(19px,3vw,32px);position:relative;overflow:hidden}
+.topic-hero:after{content:"";position:absolute;top:-120px;right:-95px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(106,213,195,.12),transparent 70%);pointer-events:none}
+.topic-hero .eyebrow{color:#8be2d3;letter-spacing:.19em;font-size:11px;font-weight:800}
+.topic-hero .headline{margin:12px 0 12px;max-width:700px}
+.topic-hero>p{max-width:770px;line-height:1.6}
+.topic-hero-stat{display:inline-flex;align-items:center;gap:7px;margin-top:20px;border:1px solid rgba(121,204,201,.25);border-radius:12px;padding:10px 13px;background:rgba(12,30,44,.55);font-size:12px;color:#c0d5df}
+.topic-hero-stat strong{font:800 21px 'Outfit',sans-serif;color:#8bdfcf}
+.topic-tabs{display:flex;flex-wrap:wrap;gap:9px}
+.topic-tab{border:1px solid rgba(148,177,203,.23);background:rgba(18,44,65,.83);border-radius:13px;padding:12px 13px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:750;color:#d8e5ee;min-width:0}
+.topic-tab span{background:#21374b;padding:3px 6px;border-radius:7px;color:#9db7c8;font:700 11px 'DM Sans',sans-serif}
+.topic-tab.active{border-color:#7cdbcd;background:linear-gradient(140deg,rgba(64,132,123,.5),rgba(27,65,71,.7));color:#fff;box-shadow:0 5px 18px rgba(75,201,185,.1)}
+.topic-tab.active span{color:#baf7e7;background:#254e4a}
+.topic-search{display:flex;flex-direction:column;gap:8px}
+.topic-search label{font-size:12px;color:#b6c8d6;font-weight:700}
+.topic-search input{border:1px solid rgba(139,188,207,.23);border-radius:13px;background:#0e2438;color:#f1f6fc;padding:14px 16px;width:100%;font-size:14px;outline-offset:3px}
+.topic-search input::placeholder{color:#829bae}
+.topic-area-list{display:grid;gap:12px}
+.topic-area{background:linear-gradient(150deg,#132d43,#0e2436);border:1px solid rgba(186,215,234,.14);border-radius:17px;overflow:hidden}
+.topic-area[open]{border-color:rgba(118,212,196,.4);box-shadow:0 11px 27px rgba(0,0,0,.1)}
+.topic-area summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px;cursor:pointer}
+.topic-area summary::-webkit-details-marker{display:none}
+.topic-area summary:focus-visible{outline:2px solid #74d8cb;outline-offset:-3px}
+.topic-area-title{display:flex;align-items:center;gap:12px;min-width:0}
+.topic-area-title>svg{color:#80dbcd}
+.topic-area-title>span{min-width:0}
+.topic-area-title strong{font-size:15px;display:block;overflow-wrap:anywhere}
+.topic-area-title small{display:block;font-size:11px;color:#92aabe;margin-top:4px}
+.topic-count{display:flex;align-items:center;gap:7px;flex:none;font-size:11px;color:#b6d4da;font-weight:700}
+.topic-area summary .topic-count svg{transition:transform .2s}
+.topic-area[open] summary .topic-count svg{transform:rotate(90deg)}
+.topic-area-body{border-top:1px solid rgba(190,213,230,.1);padding:14px 17px 16px}
+.topic-area-train{margin-bottom:10px}
+.topic-list{display:grid;gap:7px;margin-top:12px}
+.topic-row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(188,210,225,.07);background:rgba(7,23,37,.42);padding:11px 12px;border-radius:12px}
+.topic-row[hidden],.topic-area[hidden]{display:none!important}
+.topic-row-title{display:flex;flex-direction:column;min-width:0;gap:5px}
+.topic-row-title b{font-size:12px;overflow-wrap:anywhere}
+.topic-row-title small{font-size:11px;color:#8dabc0}
+.topic-row .btn{flex:0 0 auto;padding:8px 10px;white-space:nowrap;font-size:11px}
+@media(max-width:760px){.topic-layout{gap:13px}.topic-hero{padding:20px}.topic-tabs{gap:6px}.topic-tab{font-size:11px;flex:1 0 calc(50% - 6px);justify-content:center;padding:11px 6px}.topic-area summary{padding:14px 12px}.topic-area-body{padding:12px}.topic-area-title strong{font-size:13px}.topic-count{font-size:10px}.topic-row{padding:10px 9px;gap:8px}.topic-row .btn{font-size:10px;padding:9px 8px}}
+@media(max-width:390px){.topic-tab{flex-basis:100%}.topic-hero .headline{font-size:26px}.topic-row-title b{font-size:11px}}
