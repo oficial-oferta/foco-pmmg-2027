@@ -90,7 +90,7 @@ function blockMarkup(b,day,completions,today){
   const title=escapeHTML(b.subject),short=escapeHTML(b.title);
   return `<div class="plan-block ${done?'is-done':''}">
     <div class="plan-subject-mark" style="background:${color(b.subject)}"></div>
-    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small><button type="button" class="plan-train-link" data-action="${b.subject==='Simulado PMMG'?'nav:simulados':'practice:'+escapeHTML(b.subject)}">${b.subject==='Simulado PMMG'?'Abrir simulados':'Praticar questões'} ↗</button></div>
+    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small><button type="button" class="plan-train-link" data-action="${b.subject==='Simulado PMMG'?'nav:simulados':'catalog:'+encodeURIComponent(b.subject)}">${b.subject==='Simulado PMMG'?'Abrir simulados':'Escolher tópico'} ↗</button></div>
     <button type="button" class="plan-check ${done?'checked':''}" data-action="plan:toggle:${day.date}:${b.index}" aria-pressed="${done}" ${locked?'disabled title="Disponível somente no dia ou depois"':''} aria-label="${done?'Desmarcar':'Marcar'} ${title}">
       ${done?'✓':'○'}<span>${done?'Feito':'Marcar'}</span>
     </button>
