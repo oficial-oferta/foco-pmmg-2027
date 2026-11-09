@@ -11,8 +11,8 @@ const labels={
 function areaFor(q){
  const sub=q.subject,t=norm(q.topic);
  if(sub==='Português'){
- if(/fonolog|fonet|fonema|digrafo|encontro (vocal|conson)|silab|tonicidad|tritongo|ditongo|hiato/.test(t))return 'Fonologia';
  if(/ortograf|acentua|paronim|porqu|por que/.test(t))return 'Ortografia e acentuação';
+ if(/fonolog|fonet|fonema|digrafo|encontro (vocal|conson)|silab|tonicidad|tritongo|ditongo|hiato/.test(t))return 'Fonologia';
  if(/interpret|coesa|coeren|genero textual|tipologi|discurso direto|adversidade|conectivo|conjun|relacao de causa/.test(t))return 'Interpretação e gêneros textuais';
  if(/classe|gramatica|palavra|deriv|formacao|verba|pronom|prepos|mais |mas |fazer |haver /.test(t))return 'Morfologia e classes de palavras';
  if(/sujeito|predic|objeto|orac|periodo|vocativo/.test(t))return 'Sintaxe e orações';
