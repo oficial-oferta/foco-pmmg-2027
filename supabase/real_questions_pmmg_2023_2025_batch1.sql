@@ -67,7 +67,7 @@ with batch(exam_id, subject, n, topic, pdf_page) as (
   case when b.exam_id='pmmg-cfsd-2025' then '2025' else '2023' end as edition,
   case when b.exam_id='pmmg-cfsd-2025' then 2024 else 2023 end as application_year,
   case when b.exam_id='pmmg-cfsd-2025' then
-    'https://arquivos.qconcursos.com/prova/arquivo_gabarito/121468/pm-mg-2024-pm-mg-soldado-gabarito.pdf'
+    'https://arquivos.qconcursos.com/prova/arquivo_prova/121468/pm-mg-2024-pm-mg-soldado-prova.pdf'
     else 'https://arquivos.qconcursos.com/prova/arquivo_prova/93633/pm-mg-2023-pm-mg-soldado-prova.pdf' end as exam_pdf,
   case when b.exam_id='pmmg-cfsd-2025' then
     'https://intranet.policiamilitar.mg.gov.br/conteudoportal/sites/concurso/191120241844435520.pdf'
