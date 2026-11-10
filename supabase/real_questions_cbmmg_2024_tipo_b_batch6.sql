@@ -13,16 +13,16 @@ values
  (2,'Português','Vozes verbais',2,'B','Média','A alternativa B apresenta uma construção ativa no trecho escolhido. As outras incluem estruturas de voz passiva ou particípios associados a elas. Gabarito definitivo IDECAN: B.'),
  (3,'Português','Regência nominal',3,'C','Difícil','A questão exige identificar os complementos exigidos pelos nomes e sua relação sintática, distinguindo complemento nominal de adjunto adnominal. Gabarito definitivo: C.'),
  (4,'Português','Interpretação — informação explícita',3,'B','Média','É preciso confrontar o texto com o esquema cronológico e os elementos do encontro em Bellagio. O esquema indicado no gabarito definitivo é B.'),
- (5,'Português','Frase, oração e período',3,'C','A questão cobra identificação das orações e relações de coordenação e subordinação na construção apresentada. O gabarito definitivo da banca indica C.','undefined'),
+ (5,'Português','Frase, oração e período',3,'C','Média','A questão cobra identificação das orações e relações de coordenação e subordinação na construção apresentada. O gabarito definitivo da banca indica C.'),
  (6,'Português','Classes gramaticais',3,'A','Média','Em A, ''mais'' modifica o adjetivo ''baixos'', intensificando-o e funcionando como advérbio de intensidade. Gabarito definitivo: A.'),
  (7,'Português','Concordância verbal',3,'A','Difícil','O item avalia a concordância em expressões percentuais e numerais decimais. A alternativa aceita pelo gabarito definitivo para a Prova B é A.'),
  (8,'Português','Tipologia textual',3,'D','Fácil','O texto apresenta uma tese sobre distribuição de infraestrutura de IA e desenvolve argumentos para defendê-la, predominando a tipologia dissertativo-argumentativa. Gabarito D.'),
  (9,'Português','Semântica',4,'D','Fácil','O termo destacado especifica qual é o problema discutido. O gabarito definitivo classifica a relação como especificação: D.'),
- (10,'Português','Interpretação — inferência',4,'C','O texto propõe ampliação do acesso a infraestrutura e chips por meio de articulação internacional, semelhante ao consórcio de vacinas. Essa é a inferência correta da opção C.','undefined'),
+ (10,'Português','Interpretação — inferência',4,'C','Média','O texto propõe ampliação do acesso a infraestrutura e chips por meio de articulação internacional, semelhante ao consórcio de vacinas. Essa é a inferência correta da opção C.'),
  (11,'Raciocínio Lógico-Matemático','Sequências',4,'D','Média','A sequência é 1³−1=0, 2³−1=7, 3³−1=26, 4³−1=63, 5³−1=124. Logo o próximo valor é 6³−1=215. Gabarito D.'),
  (12,'Raciocínio Lógico-Matemático','Conjuntos',4,'A','Média','Pelo princípio da inclusão-exclusão: 90+70+60−30−25−20+10=155 que preferem ao menos um animal. Somando 15 que não preferem nenhum: 170 pessoas. Gabarito A.'),
  (13,'Raciocínio Lógico-Matemático','Conjuntos',4,'C','Média','Primeiro B∩C={3,5}. Depois A−(B∩C) remove 3 e 5 de A, restando {2,7,11,13}. Gabarito C.'),
- (14,'Raciocínio Lógico-Matemático','Lógica dedutiva',4,'C','Use as restrições sucessivamente: Gabriel fica em Finanças, Diego não pode ser de Vendas e as relações de vizinhança conduzem à distribuição indicada na alternativa C. Gabarito definitivo IDECAN: C.','undefined'),
+ (14,'Raciocínio Lógico-Matemático','Lógica dedutiva',4,'C','Difícil','Use as restrições sucessivamente: Gabriel fica em Finanças, Diego não pode ser de Vendas e as relações de vizinhança conduzem à distribuição indicada na alternativa C. Gabarito definitivo IDECAN: C.'),
  (15,'Raciocínio Lógico-Matemático','Equação do 1º grau',5,'D','Média','Se o total inicial é x, após doar 1/3 ficam 2x/3; após vender metade restam x/3. Com a compra de 6, x/3+6=220. Portanto x=642. Gabarito D.')
 )
 insert into public.questions
