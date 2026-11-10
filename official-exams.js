@@ -10,9 +10,9 @@ window.FOCO_EXAMS = Object.freeze([
   },
   { id:'pmmg-cfsd-2025', title:'CFSd PMMG 2025', edition:2025, applicationYear:2024,
     hasLiterature:true, label:'Soldado · PMMG · CFSd 2025', notice:'Edital DRH/CRS 10/2024', minutes:180,
-    pdf:'https://arquivos.qconcursos.com/prova/arquivo_gabarito/121468/pm-mg-2024-pm-mg-soldado-gabarito.pdf',
+    pdf:'https://arquivos.qconcursos.com/prova/arquivo_prova/121468/pm-mg-2024-pm-mg-soldado-prova.pdf',
     answerSource:'https://vanguardamilitar.com/download/2392/',
-    pdfFirstQuestionPage:5,
+    pdfFirstQuestionPage:4,
     answers:['C','D','D','C','B',null,'A','A','B','C','D','C','B',null,'B',null,'B','A','A','A','B','C','D','C','B','B','B','C','A','D','C','D','B','A','B','C','D','B','C','D','B','A','D','C','C','A','C','B','D','C'],
     note:'Gabarito definitivo publicado em 19/11/2024. Q1 foi alterada para C; questões 6, 14 e 16 foram anuladas.'
   },
