@@ -45,6 +45,8 @@ const first=UI.render({questions,subject:'Português',T});
 assert(first.includes('Fonemas, ditongos, hiatos e dígrafos'));
 assert(first.includes('rv-real:'),'Questões reais devem ter filtro exclusivo');
 assert(first.includes('Treinar esse tópico'),'Atalho de fonologia não encontrado');
+const tags=[...first.matchAll(/data-search="([^"]+)"/g)].map(m=>m[1]);
+assert(tags.some(s=>s.includes('hiato')&&s.includes('encontros vocalicos')),'Buscar hiato deve revelar encontros vocálicos');
 const index=fs.readFileSync('index.html','utf8');
 const workflow=fs.readFileSync('.github/workflows/pages.yml','utf8');
 const sw=fs.readFileSync('sw.js','utf8');
