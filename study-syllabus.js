@@ -60,5 +60,5 @@ function content(subject,date,ordinal){
  }
  return {title,detail,ref:ref.ref,reviews:due,kind,lesson:ref.title};
 }
-window.FOCO_SYLLABUS={START:CONFIG.start,WEEKS:CONFIG.weeks,SOURCE_2025,SOURCE_2023,programs:CONFIG.programs,units,reviewsFor:(s,d)=>reviews.get(s+'|'+d)||[],content,weekOf,addDays,dayOf};
+window.FOCO_SYLLABUS={START:CONFIG.start,WEEKS:CONFIG.weeks,SOURCE_2025,SOURCE_2023,programs:CONFIG.programs,datesBySubject:CONFIG.subjectDays,units,reviewsFor:(s,d)=>reviews.get(s+'|'+d)||[],content,weekOf,addDays,dayOf};
 })();
