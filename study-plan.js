@@ -158,7 +158,7 @@ function teaser({minutesByDay=DEFAULT,completions=[]}={}){
  return `<div class="card plan-home-teaser"><div class="row wrap" style="justify-content:space-between;gap:12px">
    <div><div class="eyebrow">MISSÃO DE HOJE</div><h3>Seu plano de estudos</h3><p class="muted small">${planned.length?done+' de '+planned.length+' blocos concluídos hoje':'Hoje é dia de descanso planejado'} · 🔥 ${fire} dia${fire===1?'':'s'} de ofensiva</p></div>
    <button class="btn primary sm" data-action="nav:plan">Abrir planejamento →</button></div>
-   ${planned.length?`<div class="plan-mini-progress"><span style="width:${done/planned.length*100}%"></span></div>`:''}
+   ${planned.length?`<div class="plan-mini-progress"><span style="width:${done/planned.length*100}%"></span></div><div class="plan-teaser-today">${planned.map(b=>{const completed=!!marked(completions,today,b.index,b.subject);return `<div class="plan-teaser-row ${completed?'is-done':''}"><span class="plan-teaser-status">${completed?'✓':'○'}</span><span><b>${escapeHTML(b.subject)}</b><small>${escapeHTML(b.title)} · ${prettyMinutes(b.minutes)}${(b.reviews||[]).length?' · ↻ '+b.reviews.length+' revisão(ões)':''}</small></span></div>`}).join('')}</div>`:''}
    </div>`;
 }
 window.FOCO_PLAN={DEFAULT,DAY_NAMES,TEMPLATE,todayKey,addDays,mondayOf,dayIndex,normalizeMinutes,dayBlocks,slotsForWeek,summary,streak,render,teaser};
