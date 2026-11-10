@@ -27,7 +27,7 @@ function isRealPdfRef(q){return q?.origin==='real'&&(q.reviewStatus==='referenci
 function realPdfPanel(q){
  if(!isRealPdfRef(q))return '';
  const url=String(q.sourceUrl||'');
- const safe=/^https:\/\/(?:selecon\.org\.br|arquivos\.qconcursos\.com|intranet\.policiamilitar\.mg\.gov\.br|vanguardamilitar\.com)\//i.test(url);
+ const safe=/^https:\/\/(?:selecon\.org\.br|arquivos\.qconcursos\.com|intranet\.policiamilitar\.mg\.gov\.br|vanguardamilitar\.com|(?:www\.)?bombeiros\.mg\.gov\.br)\//i.test(url);
  return `<section class="real-question-panel" aria-label="Caderno original da questão">
   <div class="real-question-top"><div><b>Questão ${esc(q.sourceQuestionNumber||'')} · prova original</b><p class="muted small">Leia o enunciado e as alternativas diretamente no caderno abaixo. Em seguida, escolha A, B, C ou D sem sair do treino.</p></div>
   ${safe?`<a class="btn outline sm" href="${esc(url)}" target="_blank" rel="noopener noreferrer">Abrir PDF completo ↗</a>`:''}</div>
