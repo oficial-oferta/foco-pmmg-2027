@@ -42,3 +42,27 @@
 .topic-row .btn{flex:0 0 auto;padding:8px 10px;white-space:nowrap;font-size:11px}
 @media(max-width:760px){.topic-layout{gap:13px}.topic-hero{padding:20px}.topic-tabs{gap:6px}.topic-tab{font-size:11px;flex:1 0 calc(50% - 6px);justify-content:center;padding:11px 6px}.topic-area summary{padding:14px 12px}.topic-area-body{padding:12px}.topic-area-title strong{font-size:13px}.topic-count{font-size:10px}.topic-row{padding:10px 9px;gap:8px}.topic-row .btn{font-size:10px;padding:9px 8px}}
 @media(max-width:390px){.topic-tab{flex-basis:100%}.topic-hero .headline{font-size:26px}.topic-row-title b{font-size:11px}}
+
+
+/* V5: concursos reais acessíveis pelo próprio catálogo e resolução */
+.topic-row-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.topic-row-actions .btn{white-space:normal}
+.real-topic-tag{border:1px solid rgba(121,219,194,.45);background:rgba(36,129,111,.24);color:#aaf2db;font-size:10px;padding:5px 7px;border-radius:8px}
+.real-topic-btn{background:rgba(23,100,89,.30);border:1px solid #53af9b;color:#d7fff0;border-radius:10px;cursor:pointer;font-weight:750;padding:8px 10px}
+.real-topic-btn:hover,.real-topic-btn:focus-visible{background:rgba(35,143,122,.42);outline-offset:2px}
+.real-question-panel{border:1px solid rgba(114,211,190,.38);border-radius:15px;background:rgba(11,35,49,.74);padding:14px;display:grid;gap:11px}
+.real-question-top{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;justify-content:space-between}
+.real-question-top>div{flex:1 1 220px}
+.real-question-top b{color:#a6e9dc;font-size:14px}
+.real-question-top p{margin:6px 0 0;line-height:1.5}
+.real-question-top .btn{white-space:normal;text-align:center;flex:0 1 auto}
+.real-pdf-slot{min-height:470px;height:min(66vh,720px);border:1px solid rgba(180,218,222,.22);background:#f5f6f7;border-radius:10px;overflow:hidden}
+#real-pdf-iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+@media(max-width:760px){
+ .topic-row{align-items:flex-start;flex-direction:column}
+ .topic-row-actions{width:100%;justify-content:flex-start}
+ .topic-row-actions .btn{flex:0 1 auto;font-size:11px}
+ .real-question-panel{padding:11px}
+ .real-question-top .btn{width:100%}
+ .real-pdf-slot{height:59vh;min-height:360px}
+}
