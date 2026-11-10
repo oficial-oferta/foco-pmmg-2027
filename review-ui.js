@@ -34,7 +34,7 @@ function render({questions,subject='Português',search='',T}){
  <div class="rv-phonics">${phonics.map(([name,desc,topic])=>`<div class="rv-phonics-item"><strong>${E(name)}</strong><p>${E(desc)}</p><button data-action="rv-practice:${encodeURIComponent(topic)}">Treinar esse tópico ↗</button></div>`).join('')}</div>
  <p class="rv-mnemonic"><b>Macete:</b> ditongo fica junto na sílaba; hiato se separa; dígrafo são duas letras para um som. Nos exercícios, conte os <b>fonemas</b>, não as letras!</p></section>`:'';
  const cats=groups.map((g,i)=>{
- const rows=g.topics.map(t=>{const id=encodeURIComponent(t.topic);return `<details class="rv-topic" data-search="${E(norm(t.topic+' '+g.area))}">
+ const rows=g.topics.map(t=>{const id=encodeURIComponent(t.topic);return `<details class="rv-topic" data-search="${E(norm([t.topic,g.area,t.note.summary,t.note.example,t.note.trap].join(' ')))}">
  <summary><span class="rv-topic-name"><strong>${E(t.topic)}</strong><small>${t.count} questões no banco${t.real?' · '+t.real+' reais':''}${!t.note.curated?' · ficha geral':''}</small></span><span class="rv-toggle">Ler resumo ⌄</span></summary>
  <div class="rv-topic-details">${detail(t.note)}<div class="rv-actions"><button class="btn primary sm" data-action="rv-practice:${id}">Praticar ${Math.min(t.count,10)} questões</button>${t.real?`<button class="btn outline sm" data-action="rv-real:${id}">Só concursos (${t.real})</button>`:''}</div></div></details>`}).join('');
  return `<details class="rv-group" data-area="${E(norm(g.area))}" ${i===0?'open':''}><summary><span><strong>${E(g.area)}</strong><small>${g.topics.length} tópicos com revisão</small></span><span class="rv-group-caret">⌄</span></summary><div class="rv-group-rows">${rows}</div></details>`;
