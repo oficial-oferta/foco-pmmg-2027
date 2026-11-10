@@ -160,3 +160,20 @@ O backend PostgreSQL possui 500 questões ativas em cada disciplina: Português,
 **Meta 50:** rótulos atuais de tópicos: 69 em Português (2 com 50 ou mais), 42 em Matemática (18 com 50 ou mais). São aproximadamente 3.704 posições abaixo de 50 por **rótulos separados**, não uma estimativa definitiva após a normalização de sinônimos. Não criar aliases novos só para inflar meta; manter IDs e histórico.
 
 **Continuação periódica:** solicitada pelo usuário e habilitada como tarefa diária. Cada execução deve verificar conexões e estado do banco antes de cadastrar algo, informar números realmente confirmados e respeitar provas/gabaritos oficiais. O planejamento detalhado está na [issue #3](https://github.com/oficial-oferta/foco-pmmg-2027/issues/3).
+
+
+## Plano de Estudos V6 — roteiro dirigido de 16 semanas (09/11/2026)
+
+**Base documental conferida:** Anexo B do [Edital DRH/CRS nº 10/2024, CFSd 2025](https://www.pensarcursos.com.br/blog/wp-content/uploads/2024/09/Edital-PMMG-2024.pdf#page=60), confrontado com o [Edital DRH/CRS nº 11/2022, CFSd 2023](https://dhg1h5j42swfq.cloudfront.net/2022/12/30181724/edital-pmmg-soldado-1.pdf#page=57). Não são editais de 2027. A ordem é pedagógica e pode ser ajustada quando sair novo edital.
+
+- Novo arquivo [`study-syllabus.js`](study-syllabus.js): **16 semanas** com **48 aulas centrais de Português**, **32 de Raciocínio Lógico-Matemático**, **16 de Direito e Direitos Humanos**, **16 de Inglês** e **16 de Literatura**. Todos os dias mostram assunto exato, item do edital, tempo, lista de revisões de conteúdos anteriores e check-in manual por bloco.
+- **25 horas semanais, preservando padrão do app:** 3h em cada dia útil e 5h sábado/domingo (400h ao longo das 16 semanas). Distribuição das horas: Português 8h; Matemática 5h; Direito 5h; Inglês 2h; Literatura 2h; simulados 3h.
+- Primeira semana começa **09/11/2026** com **Fonemas** (Português) e **Potenciação/radiciação** (Matemática); as duas marcações já salvas para essa data permanecem intactas. Potenciação/radiciação está identificada como **pré-requisito**, não cláusula autônoma do edital.
+- **Revisões espaçadas**, internamente programadas para horários de cada disciplina: Português 7/21/42 dias (fonemas: 16/11, 30/11 e 21/12), Matemática 9/23/44, Direito 6/20/41, Inglês 8/22/43, Literatura 10/24/45. Limite de duas revisões por bloco, sem criar semana exclusiva para revisões. A revisão planejada não confirma que o estudo original foi feito.
+- **Literatura:** leitura de *Campo Geral* e *Vidas Secas* é **provisória** por ser a relação de obras do edital 2025. O edital 2023 tinha livros diferentes; atualizar quando houver novo edital.
+- `study-plan.js`, `study-plan.css`, `index.html` e `app.js` integram o calendário. O painel inicial agora mostra o assunto de hoje em vez de apenas números. As consultas e check-ins continuam nas tabelas `study_plan_settings` e `study_plan_completions` com RLS; não foi necessária migração nem alteração de progresso pré-existente.
+- Atualizado o teste `tools/test_study_plan.cjs` para verificar a carga das 16 semanas, os conteúdos de 09/11, a revisão de fonemas de 16/11, a revisão matemática de 18/11 e a publicação de `study-syllabus.js`. Workflow de GitHub Pages inclui o novo arquivo de currículo.
+
+**Documento com o programa completo, semana a semana:** [`docs/PLANO_ESTUDOS_16_SEMANAS.md`](docs/PLANO_ESTUDOS_16_SEMANAS.md).
+
+**Observação técnica:** marcações manuais permanecem atreladas a data, índice do bloco e disciplina; este V6 mantém os mesmos blocos e disciplinas por dia, evitando invalidar as marcações anteriores. O módulo não deduz compreensão nem transforma aulas não feitas em concluídas. Conteúdos novos e quantidade de questões podem ser ajustados conforme revisões e desempenho individual.
