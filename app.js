@@ -125,7 +125,7 @@ async function planAction(action){
    const matched=/^plan:toggle:(\d{4}-\d{2}-\d{2}):(\d)$/.exec(action);
    if(!matched)return;const date=matched[1],index=Number(matched[2]);
    if(date>P.todayKey()){toast('Você poderá marcar esse bloco na data programada.');return}
-   const weekday=P.dayIndex(date),block=P.dayBlocks(weekday,state.planMinutes[weekday]).find(x=>x.index===index);
+   const weekday=P.dayIndex(date),block=P.dayBlocks(weekday,state.planMinutes[weekday],date).find(x=>x.index===index);
    if(!block)return;
    const existing=state.planCompletions.find(x=>x.study_date===date&&x.block_index===index&&x.subject===block.subject);
    state.planBusy=true;
