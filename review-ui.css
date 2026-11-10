@@ -60,3 +60,30 @@
 @media(max-width:900px){.bottomnav button{min-width:0!important;flex:1 1 0!important;font-size:8px!important;gap:4px!important;padding:3px 0!important}.bottomnav button svg{width:19px!important;height:19px!important}.bottomnav{padding-left:5px!important;padding-right:5px!important;gap:1px}.rv-layout{gap:12px}}
 @media(max-width:620px){.rv-hero{padding:20px}.rv-featured{padding:15px}.rv-featured-top .btn{width:100%}.rv-phonics{grid-template-columns:1fr 1fr;gap:7px}.rv-phonics-item{padding:11px}.rv-phonics-item strong{font-size:14px}.rv-phonics-item p{font-size:11px}.rv-phonics-item button{font-size:10px}.rv-tab{flex:1 1 calc(50% - 8px);padding:9px 7px}.rv-controls{padding:12px}.rv-group>summary{padding:13px}.rv-group-rows{padding:8px}.rv-toggle{font-size:10px}.rv-topic>summary{padding:10px}.rv-actions .btn{flex:1 1 130px}}
 @media(max-width:370px){.rv-stats{gap:5px}.rv-stats span{font-size:10px;padding:7px}.rv-phonics{grid-template-columns:1fr}.rv-tab{font-size:10px}.rv-topic-name strong{font-size:11px}}
+
+/* Revisões V8 — leitura em camadas para substituir cartões excessivamente curtos */
+.rv-note-expanded{gap:13px!important}
+.rv-note-expanded .rv-lesson-lead{border-left:4px solid #70dbc0!important;background:linear-gradient(110deg,rgba(46,144,123,.20),rgba(9,36,54,.55))!important;padding:14px 15px!important}
+.rv-note-expanded .rv-lesson-lead b{font-size:12px;color:#acf5de}
+.rv-note-expanded .rv-lesson-lead p{font-size:14px;color:#eff9fa;line-height:1.78}
+.rv-note-expanded .rv-lesson-part{border:1px solid rgba(131,193,205,.13);border-left:0!important;border-radius:13px!important;background:rgba(5,26,41,.37)!important;padding:15px!important}
+.rv-lesson-part h4{margin:0 0 9px;color:#9fe7d3;font-family:'Outfit',sans-serif;font-size:14px;letter-spacing:.005em}
+.rv-lesson-part p{line-height:1.8!important;font-size:13px!important;color:#daeaf1!important}
+.rv-lesson-worked{background:linear-gradient(125deg,rgba(28,97,100,.28),rgba(5,26,41,.37))!important;border-color:rgba(97,207,190,.24)!important}
+.rv-lesson-trap{background:rgba(126,97,48,.10)!important;border:1px solid rgba(225,184,108,.22)!important}
+.rv-lesson-trap h4{color:#f3c87d}
+.rv-steps{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.rv-steps li{display:flex;gap:12px;align-items:flex-start;border-bottom:1px solid rgba(125,192,211,.10);padding-bottom:9px;font-size:12px;line-height:1.7;color:#d8eaf2}
+.rv-steps li:last-child{border-bottom:0;padding-bottom:0}
+.rv-steps li strong{color:#98ecd0;border:1px solid rgba(114,206,180,.23);font:800 12px 'Outfit',sans-serif;line-height:1.6;flex:0 0 24px;width:24px;height:24px;text-align:center;border-radius:7px;background:rgba(57,162,130,.13)}
+.rv-steps li span{flex:1;min-width:0}
+.rv-recall{border:1px solid rgba(135,210,185,.38);background:linear-gradient(120deg,rgba(28,98,81,.31),rgba(14,52,62,.45));border-radius:13px;overflow:hidden}
+.rv-recall>summary{cursor:pointer;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:9px;font-weight:750;font-size:12px;line-height:1.6;color:#d5f8e9;list-style:none}
+.rv-recall>summary::-webkit-details-marker{display:none}
+.rv-recall>summary span{font-size:10px;color:#8ee5c6;white-space:nowrap}
+.rv-recall-answer{border-top:1px solid rgba(147,222,191,.2);background:rgba(2,27,36,.30);padding:13px 15px;color:#e3f7ee;font-size:12px;line-height:1.75}
+.rv-topic[open]>.rv-topic-details{padding:15px}
+.rv-topic .rv-actions{position:relative;border-top:1px solid rgba(144,209,196,.15);padding-top:14px}
+.rv-topic[open]>summary .rv-toggle{color:#a4efd4}
+@media(min-width:850px){.rv-note-expanded{gap:14px}.rv-note-expanded .rv-lesson-part{padding:18px!important}.rv-note-expanded .rv-lesson-lead{padding:17px!important}}
+@media(max-width:500px){.rv-note-expanded .rv-lesson-part{padding:12px!important}.rv-note-expanded .rv-lesson-lead{padding:12px!important}.rv-lesson-part h4{font-size:13px}.rv-lesson-part p{font-size:12px!important}.rv-recall>summary{font-size:11px;display:block}.rv-recall>summary span{display:block;margin-top:4px}.rv-topic[open]>.rv-topic-details{padding:10px}}
