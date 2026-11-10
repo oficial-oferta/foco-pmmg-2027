@@ -1,0 +1,62 @@
+/* Foco PMMG 2027 — Revisões rápidas: responsivo, legível e objetivo */
+.rv-layout{max-width:1100px;margin:0 auto;padding-bottom:30px;display:grid;gap:18px}
+.rv-hero{position:relative;overflow:hidden;padding:clamp(22px,3.5vw,34px);border:1px solid rgba(126,218,198,.3);border-radius:24px;background:radial-gradient(circle at 90% 0%,rgba(54,171,147,.19),transparent 38%),linear-gradient(140deg,#14394b,#0e263b)}
+.rv-hero h1{font-size:clamp(26px,4vw,38px);letter-spacing:-.04em;line-height:1.15;margin:12px 0}
+.rv-hero>p{color:#b5cedc;max-width:690px;line-height:1.65;margin:0}
+.rv-stats{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}
+.rv-stats span{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(147,212,210,.22);background:rgba(3,22,32,.35);border-radius:10px;padding:9px 11px;font-size:11px;color:#b6d8d6}
+.rv-stats b{font-size:15px;color:#9af1d8}
+.rv-featured{padding:clamp(17px,3vw,26px);border-radius:22px;background:linear-gradient(145deg,rgba(28,79,77,.68),rgba(19,45,65,.95));border:1px solid rgba(120,226,199,.42);display:grid;gap:14px;box-shadow:0 14px 34px rgba(0,0,0,.14)}
+.rv-featured-top{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.rv-featured-top>div{flex:1 1 240px}
+.rv-highlight{color:#9cf5d5;letter-spacing:.12em;font-size:10px;font-weight:850}
+.rv-featured h2{font-family:'Outfit',sans-serif;letter-spacing:-.035em;font-size:clamp(20px,3vw,26px);line-height:1.2;margin:8px 0}
+.rv-featured-top p{color:#b8d5d7;margin:0;line-height:1.45;font-size:12px}
+.rv-featured-top>.btn{flex:0 0 auto}
+.rv-phonics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.rv-phonics-item{border:1px solid rgba(159,239,214,.16);background:rgba(2,24,34,.35);border-radius:14px;padding:13px;display:flex;flex-direction:column;gap:6px}
+.rv-phonics-item strong{font-family:'Outfit',sans-serif;font-size:16px;color:#e4fff2}
+.rv-phonics-item p{font-size:12px;color:#c4ddde;line-height:1.5;margin:0;flex:1}
+.rv-phonics-item button{border:0;background:transparent;color:#93e9c9;padding:7px 0 0;text-align:left;font-size:11px;font-weight:800;cursor:pointer}
+.rv-phonics-item button:hover,.rv-phonics-item button:focus-visible{text-decoration:underline}
+.rv-mnemonic{font-size:12px;line-height:1.55;color:#e3f5eb;background:rgba(110,217,181,.1);border-radius:11px;border:1px solid rgba(143,242,205,.18);padding:12px;margin:0}
+.rv-controls{display:grid;gap:11px;padding:17px;background:rgba(15,39,57,.8);border:1px solid var(--line);border-radius:17px}
+.rv-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.rv-tab{border:1px solid rgba(161,197,218,.23);background:#112d43;color:#c3d7e4;border-radius:11px;padding:10px 12px;font-size:11px;font-weight:800;min-height:40px}
+.rv-tab.active{color:#fff;background:rgba(55,137,127,.45);border-color:#7cd9c9;box-shadow:0 0 0 1px rgba(84,191,171,.12)}
+.rv-search-label{color:#bed3de;font-size:12px;font-weight:750}
+#review-search{width:100%;padding:13px 15px;border-radius:12px;border:1px solid rgba(131,182,196,.36);background:#0b2031;color:#eef9fc;font-size:13px}
+#review-search::placeholder{color:#7b9cad}
+.rv-search-count{color:#92aebc;font-size:11px;margin:0;min-height:12px}
+.rv-group-list{display:grid;gap:11px}
+.rv-group{border-radius:17px;border:1px solid rgba(158,200,212,.18);overflow:hidden;background:linear-gradient(145deg,#102c41,#0b2134)}
+.rv-group[hidden],.rv-topic[hidden]{display:none!important}
+.rv-group>summary,.rv-topic>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}
+.rv-group>summary::-webkit-details-marker,.rv-topic>summary::-webkit-details-marker{display:none}
+.rv-group>summary{padding:17px 19px}
+.rv-group>summary>span:first-child,.rv-topic-name{min-width:0;display:grid;gap:4px}
+.rv-group>summary strong{font-family:'Outfit',sans-serif;font-size:17px;color:#f0f6fb}
+.rv-group>summary small{color:#98b6c7;font-size:11px}
+.rv-group-caret{color:#83d6be;transition:transform .2s}
+.rv-group[open]>.rv-group-caret,.rv-group[open]>summary .rv-group-caret{transform:rotate(180deg)}
+.rv-group-rows{border-top:1px solid rgba(170,201,219,.11);padding:11px;display:grid;gap:7px}
+.rv-topic{border:1px solid rgba(160,199,217,.1);border-radius:11px;background:rgba(4,23,36,.53);min-width:0}
+.rv-topic[open]{border-color:rgba(127,215,191,.41);background:rgba(17,51,61,.8)}
+.rv-topic>summary{padding:12px 13px;min-height:52px}
+.rv-topic-name strong{color:#e5f1f5;overflow-wrap:anywhere;font-size:12px}
+.rv-topic-name small{font-size:10px;color:#94b6c3}
+.rv-toggle{white-space:nowrap;color:#9ce9d3;font-size:10px;font-weight:800}
+.rv-topic[open] .rv-toggle{color:#c8fff2}
+.rv-topic-details{border-top:1px solid rgba(170,217,216,.12);padding:12px;display:grid;gap:12px}
+.rv-note{display:grid;gap:8px}
+.rv-note>div{border-left:3px solid rgba(117,214,192,.58);padding:5px 10px;background:rgba(0,22,35,.3);border-radius:3px 9px 9px 3px}
+.rv-note b{display:block;font-size:11px;color:#9fe7d4;margin-bottom:4px}
+.rv-note p{font-size:12px;color:#dae6ed;margin:0;line-height:1.65;overflow-wrap:anywhere}
+.rv-source{color:#9fe6d3;font-size:11px;font-weight:750;text-decoration:underline;text-underline-offset:3px;justify-self:start}
+.rv-actions{display:flex;gap:8px;flex-wrap:wrap}
+.rv-actions .btn{font-size:11px;flex:0 1 auto;min-width:0}
+.rv-footer-note{padding:15px 18px;border:1px solid rgba(139,187,212,.15);border-radius:14px;background:rgba(18,45,64,.6);font-size:12px;line-height:1.7;color:#afc8d3}
+.rv-footer-note strong{color:#e2f4ee}
+@media(max-width:900px){.bottomnav button{min-width:0!important;flex:1 1 0!important;font-size:8px!important;gap:4px!important;padding:3px 0!important}.bottomnav button svg{width:19px!important;height:19px!important}.bottomnav{padding-left:5px!important;padding-right:5px!important;gap:1px}.rv-layout{gap:12px}}
+@media(max-width:620px){.rv-hero{padding:20px}.rv-featured{padding:15px}.rv-featured-top .btn{width:100%}.rv-phonics{grid-template-columns:1fr 1fr;gap:7px}.rv-phonics-item{padding:11px}.rv-phonics-item strong{font-size:14px}.rv-phonics-item p{font-size:11px}.rv-phonics-item button{font-size:10px}.rv-tab{flex:1 1 calc(50% - 8px);padding:9px 7px}.rv-controls{padding:12px}.rv-group>summary{padding:13px}.rv-group-rows{padding:8px}.rv-toggle{font-size:10px}.rv-topic>summary{padding:10px}.rv-actions .btn{flex:1 1 130px}}
+@media(max-width:370px){.rv-stats{gap:5px}.rv-stats span{font-size:10px;padding:7px}.rv-phonics{grid-template-columns:1fr}.rv-tab{font-size:10px}.rv-topic-name strong{font-size:11px}}
