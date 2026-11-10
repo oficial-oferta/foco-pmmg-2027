@@ -24,6 +24,8 @@ jobs:
         run: node tools/audit_content_v4.cjs
       - name: Testar cronograma, alocação de horas, ofensiva e interface
         run: node tools/test_study_plan.cjs
+      - name: Validar aba Revisões (5 matérias, fonologia e treino filtrado)
+        run: node tools/test_reviews.cjs
       - name: Auditar catálogo de tópicos, novas questões e proporção do treino misto
         run: node tools/test_topic_catalog.cjs
       - name: Auditar 687 novas questões de Português e Matemática
