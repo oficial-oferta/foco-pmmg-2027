@@ -229,7 +229,7 @@ function topicsCatalog(){
    <div class="topic-list">${g.topics.map(t=>{
      const real=state.questions.filter(q=>q.subject===subject&&q.topic===t.topic&&q.origin==='real').length;
      return `<div class="topic-row" data-search="${esc(T.norm(g.area+' '+t.topic))}">
-     <div class="topic-row-title"><b>${esc(t.topic)}</b><small>${t.count} ${t.count===1?'questão':'questões'}${real?' · '+real+' de concurso':''}</small></div>
+     <div class="topic-row-title"><b>${esc(t.topic)}</b><small>${t.count}/50 questões${t.count>=50?' · Meta atingida':''}${real?' · '+real+' de concurso':''}</small><div class="topic-progress" role="progressbar" aria-label="Progresso no tópico" aria-valuenow="${Math.min(50,t.count)}" aria-valuemin="0" aria-valuemax="50"><div style="width:${Math.min(100,Math.round(t.count/50*100))}%"></div></div></div>
      <div class="topic-row-actions"><button class="btn outline sm" data-action="catalog-topic:${encodeURIComponent(t.topic)}">Praticar ${ic('arrow',15)}</button>
       ${real?`<button class="btn real-topic-btn sm" data-action="catalog-real-topic:${encodeURIComponent(t.topic)}">Só concursos (${real})</button>`:''}</div>
    </div>`}).join('')}</div>
