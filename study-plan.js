@@ -1,6 +1,8 @@
 (function installStudyPlan(){
 'use strict';
 const DAY_NAMES=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];
+const SYLLABUS=window.FOCO_SYLLABUS;
+if(!SYLLABUS)throw Error('O roteiro de estudos não foi carregado.');
 const DEFAULT=[180,180,180,180,180,300,300];
 const TEMPLATE=[
  [{subject:'Português',minutes:90,title:'Interpretação de textos',detail:'Ideia central, inferência, coesão e questões PMMG.'},{subject:'Raciocínio Lógico-Matemático',minutes:90,title:'Lógica proposicional',detail:'Proposições, negações e tabelas-verdade.'}],
@@ -39,7 +41,7 @@ function normalizeMinutes(v){
   if(out.some(n=>!Number.isInteger(n)||n<0||n>600||n%30!==0))return [...DEFAULT];
   return out;
 }
-function dayBlocks(day,minutes){
+function dayBlocks(day,minutes,date=addDays(mondayOf(todayKey()),day)){
   if(day<0||day>6||!Number.isInteger(minutes)||minutes<0||minutes>600||minutes%30!==0)return [];
   const base=TEMPLATE[day],slots=minutes/30,total=base.reduce((s,x)=>s+x.minutes,0);
   const counts=base.map(x=>{const raw=slots*x.minutes/total;return {whole:Math.floor(raw),remainder:raw%1}});
@@ -48,13 +50,13 @@ function dayBlocks(day,minutes){
     if(!remaining)break;
     counts[k.i].whole++;remaining--;
   }
-  return base.map((x,i)=>({index:i,...x,minutes:counts[i].whole*30,title:x.subject==='Simulado PMMG'&&counts[i].whole*30<180?'Mini-simulado PMMG':x.title,detail:x.subject==='Simulado PMMG'&&counts[i].whole*30<180?'Faça uma versão reduzida, dentro do tempo disponível.':x.detail})).filter(x=>x.minutes>0);
+  return base.map((x,i)=>{const minutes=counts[i].whole*30;const subjSlot=(SYLLABUS.datesBySubject?.[x.subject]||[]).indexOf(day);const lesson=SYLLABUS.content(x.subject,date,subjSlot<0?0:subjSlot);return {index:i,...x,...lesson,minutes,title:x.subject==='Simulado PMMG'&&minutes<180?'Mini-simulado PMMG':lesson.title,detail:x.subject==='Simulado PMMG'&&minutes<180?'Resolva questões em tempo proporcional, com correção detalhada.':lesson.detail};}).filter(x=>x.minutes>0);
 }
 function slotsForWeek(monday,settings){
   const minutes=normalizeMinutes(settings);
   return DAY_NAMES.map((name,i)=>{
     const key=addDays(monday,i);
-    return {index:i,date:key,name,minutes:minutes[i],blocks:dayBlocks(i,minutes[i])};
+    return {index:i,date:key,name,minutes:minutes[i],blocks:dayBlocks(i,minutes[i],key)};
   });
 }
 function marked(completions,date,index,subject){
@@ -90,7 +92,7 @@ function blockMarkup(b,day,completions,today){
   const title=escapeHTML(b.subject),short=escapeHTML(b.title);
   return `<div class="plan-block ${done?'is-done':''}">
     <div class="plan-subject-mark" style="background:${color(b.subject)}"></div>
-    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small><button type="button" class="plan-train-link" data-action="${b.subject==='Simulado PMMG'?'nav:simulados':'catalog:'+encodeURIComponent(b.subject)}">${b.subject==='Simulado PMMG'?'Abrir simulados':'Escolher tópico'} ↗</button></div>
+    <div class="plan-block-copy"><strong>${title}</strong><span>${short} · ${prettyMinutes(b.minutes)}</span><small>${escapeHTML(b.detail)}</small><small class="plan-edital-ref">${b.kind==='prerequisito'?'Pré-requisito matemático':'Edital PMMG 10/2024'} · ${escapeHTML(b.ref||'Anexo B')}</small>${(b.reviews||[]).map(r=>`<div class="plan-review-pill">↻ Revisão programada: ${escapeHTML(r.title)} <span>(${formatDate(r.original)})</span></div>`).join('')}<button type="button" class="plan-train-link" data-action="${b.subject==='Simulado PMMG'?'nav:simulados':'catalog:'+encodeURIComponent(b.subject)}">${b.subject==='Simulado PMMG'?'Abrir simulados':'Escolher tópico'} ↗</button></div>
     <button type="button" class="plan-check ${done?'checked':''}" data-action="plan:toggle:${day.date}:${b.index}" aria-pressed="${done}" ${locked?'disabled title="Disponível somente no dia ou depois"':''} aria-label="${done?'Desmarcar':'Marcar'} ${title}">
       ${done?'✓':'○'}<span>${done?'Feito':'Marcar'}</span>
     </button>
@@ -116,12 +118,12 @@ function render({minutesByDay=DEFAULT,completions=[],shift=0,editing=false,demo=
   const fire=streak(completions,minutes,today);
   const totalHours=minutes.reduce((a,b)=>a+b,0);
   const weekEnd=addDays(weekStart,6);
-  const todayPlan=dayBlocks(dayIndex(today),minutes[dayIndex(today)]);
+  const todayPlan=dayBlocks(dayIndex(today),minutes[dayIndex(today)],today);
   const todayDone=todayPlan.filter(b=>marked(completions,today,b.index,b.subject)).length;
   return `<div class="plan-layout stack">
     <section class="plan-hero">
-      <div class="eyebrow">SEU PLANO DE APROVAÇÃO</div><div class="plan-hero-header">
-        <div><h1 class="headline">Plano de Estudos</h1><p>Um dia por vez. Marque o que estudou e construa consistência.</p></div>
+      <div class="eyebrow">ROTEIRO DE 16 SEMANAS · 25H/SEMANA</div><div class="plan-hero-header">
+        <div><h1 class="headline">Plano de Estudos</h1><p>Assunto exato, exercícios e revisões espaçadas a cada aula. Início: 09/11/2026.</p><div class="plan-reference"><a href="${SYLLABUS.SOURCE_2025}" target="_blank" rel="noopener noreferrer">Anexo B · edital CFSd 2025 ↗</a><span>Livros de Literatura: referência histórica, sujeitos a mudança.</span></div></div>
         <div class="plan-streak"><span>🔥</span><strong>${fire}</strong><small>dia${fire===1?'':'s'} de ofensiva</small></div>
       </div>
       <div class="plan-kpis">
@@ -133,24 +135,24 @@ function render({minutesByDay=DEFAULT,completions=[],shift=0,editing=false,demo=
       <div class="plan-hero-footer">Hoje: <b>${todayDone}/${todayPlan.length} blocos</b> · Sua meta habitual: <b>${prettyMinutes(totalHours)}/semana</b></div>
     </section>
     <section class="plan-toolbar">
-      <div><h2>Minha semana</h2><p class="muted small">${formatDate(weekStart)} a ${formatDate(weekEnd)} · ${shift===0?'Semana atual':shift<0?'Semana anterior':'Próxima semana'}</p></div>
+      <div><h2>Semana ${SYLLABUS.weekOf(weekStart)+1} de ${SYLLABUS.WEEKS}</h2><p class="muted small">${formatDate(weekStart)} a ${formatDate(weekEnd)} · ${shift===0?'Semana atual':shift<0?'Semana anterior':'Próxima semana'} · teoria + questões + revisões</p></div>
       <div class="plan-toolbar-actions">
         <button class="btn outline sm" data-action="plan:week:-1" aria-label="Semana anterior">‹</button>
         ${shift!==0?'<button class="btn outline sm" data-action="plan:today">Hoje</button>':''}
-        <button class="btn outline sm" data-action="plan:week:1" aria-label="Semana seguinte" ${shift>=8?'disabled':''}>›</button>
+        <button class="btn outline sm" data-action="plan:week:1" aria-label="Semana seguinte" ${SYLLABUS.weekOf(weekStart)>=SYLLABUS.WEEKS-1?'disabled':''}>›</button>
         <button class="btn ${editing?'primary':'outline'} sm" data-action="plan:settings">⚙ Ajustar horas</button>
       </div>
     </section>
-    ${editing?`<section class="card plan-settings"><h3>Personalize seu tempo</h3><p class="muted small">Ajuste a disponibilidade de cada dia. As matérias são as mesmas para todos e os blocos são redistribuídos proporcionalmente. Escolha 0h para descanso.</p>
+    ${editing?`<section class="card plan-settings"><h3>Personalize seu tempo</h3><p class="muted small">Ajuste a disponibilidade de cada dia. Os assuntos seguem o edital e os blocos são redistribuídos proporcionalmente. Escolha 0h para descanso.</p>
       <form id="plan-settings-form"><div class="plan-hours-grid">${minutes.map((n,i)=>hoursSelect(i,n)).join('')}</div>
       <div class="plan-actions"><button type="button" class="btn outline" data-action="plan:reset">Usar padrão 25h</button><button type="submit" class="btn primary">Salvar meu cronograma</button></div></form>
       <p class="muted tiny">Alterar as horas não apaga check-ins antigos. A conclusão é uma marcação manual, não um cronômetro.</p></section>`:''}
     <div class="plan-week-grid">${progress.days.map(d=>dayMarkup(d,completions,today)).join('')}</div>
-    <section class="card plan-hint"><div class="plan-hint-icon">✦</div><div><b>Ofensiva inteligente</b><p class="muted small">Cada dia programado com pelo menos um bloco concluído conta para sua sequência. Dias definidos como descanso não quebram a ofensiva. O domingo tem simulado; quando houver menos tempo, você poderá fazer uma versão reduzida.</p>${demo?'<p class="muted tiny">Prévia local: seus check-ins ficam neste navegador. Para sincronizar entre dispositivos, entre com um usuário.</p>':''}</div></section>
+    <section class="card plan-hint"><div class="plan-hint-icon">✦</div><div><b>Ofensiva inteligente</b><p class="muted small">Cada dia traz conteúdo específico do Anexo B e revisões curtas espaçadas por disciplina. Marque o bloco apenas quando cumprir o estudo. As revisões entram dentro do tempo planejado — não ocupam uma semana inteira. O domingo tem simulado; quando houver menos tempo, faça uma versão reduzida.</p>${demo?'<p class="muted tiny">Prévia local: seus check-ins ficam neste navegador. Para sincronizar entre dispositivos, entre com um usuário.</p>':''}</div></section>
   </div>`;
 }
 function teaser({minutesByDay=DEFAULT,completions=[]}={}){
- const today=todayKey(),minutes=normalizeMinutes(minutesByDay),planned=dayBlocks(dayIndex(today),minutes[dayIndex(today)]);
+ const today=todayKey(),minutes=normalizeMinutes(minutesByDay),planned=dayBlocks(dayIndex(today),minutes[dayIndex(today)],today);
  const done=planned.filter(b=>marked(completions,today,b.index,b.subject)).length;
  const fire=streak(completions,minutes,today);
  return `<div class="card plan-home-teaser"><div class="row wrap" style="justify-content:space-between;gap:12px">
