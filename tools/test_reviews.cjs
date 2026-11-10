@@ -5,6 +5,21 @@ const world={window:{}};
 for(const path of files)vm.runInNewContext(fs.readFileSync(path,'utf8'),world,{filename:path});
 const T=world.window.FOCO_TOPICS,R=world.window.FOCO_REVIEW_NOTES,UI=world.window.FOCO_REVIEW_UI,D=world.window.FOCO_REVIEW_DEEP,DETAILS=world.window.FOCO_REVIEW_DETAILS;
 assert(T&&R&&UI&&D&&DETAILS,'Dependências de revisão aprofundada ausentes');
+const inventory=JSON.parse(fs.readFileSync('data/review-topic-inventory.json','utf8'));
+const registered=Object.entries(inventory.subjects).flatMap(([subject,topics])=>topics.map(topic=>({subject,topic})));
+assert.equal(inventory.total,365,'Inventário de revisão divergente');
+assert.equal(registered.length,inventory.total,'Contagem de tópicos divergente');
+for(const q of registered){
+ const note=R.get(q.subject,q.topic);
+ const area=T.areaFor(q);
+ const full={...D.get(q.subject,area),...DETAILS.get(q.subject,q.topic,note)};
+ assert(note.curated,'Falta definição específica para '+q.subject+' / '+q.topic);
+ assert(D.AREAS[q.subject]&&D.AREAS[q.subject][area],'Falta guia de área para '+q.subject+' / '+q.topic+' ('+area+')');
+ assert(Array.isArray(full.steps)&&full.steps.length>=3,'Faltam etapas para '+q.subject+' / '+q.topic);
+ assert(full.worked&&full.recall&&full.answer,'Faltam exemplo ou revisão ativa: '+q.subject+' / '+q.topic);
+ const content=[note.summary,note.example,note.trap,full.intro,...full.steps,full.worked,full.contrast,full.recall,full.answer].join(' ');
+ assert(content.length>=800,'Ficha curta demais: '+q.subject+' / '+q.topic+' ('+content.length+' caracteres)');
+}
 const phon=R.get('Português','Fonologia — Encontros vocálicos');
 assert(phon.curated&&phon.summary.includes('Ditongo')&&phon.summary.includes('Hiato'),'Conceito fonológico ausente');
 const graph=R.get('Português','Fonologia — Dígrafos');
@@ -84,5 +99,5 @@ assert(appNode.innerHTML.includes('rv-featured')&&appNode.innerHTML.includes('Fo
  assert.equal(env.state.revisionSubject,'Inglês');
  assert.equal(env.state.screen,'revision');
  assert(appNode.innerHTML.includes('Present perfect'));
- console.log('PASS: Revisões aprofundadas — 5 disciplinas, teoria, passos, exemplos, comparação, memorização, PWA e prática filtrada');
+ console.log('PASS: Revisões aprofundadas — 365 tópicos, 5 disciplinas, teoria, passos, exemplos, comparação, memorização, PWA e prática filtrada');
 })().catch(e=>{console.error(e);process.exitCode=1});
