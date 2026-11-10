@@ -1,10 +1,10 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const files=['topic-catalog.js','review-notes.js','review-notes-pt-math.js','review-notes-language-lit.js','review-notes-law.js','review-ui.js'];
+const files=['topic-catalog.js','review-notes.js','review-notes-pt-math.js','review-notes-language-lit.js','review-notes-law.js','review-deep.js','review-deep-details.js','review-ui.js'];
 const world={window:{}};
 for(const path of files)vm.runInNewContext(fs.readFileSync(path,'utf8'),world,{filename:path});
-const T=world.window.FOCO_TOPICS,R=world.window.FOCO_REVIEW_NOTES,UI=world.window.FOCO_REVIEW_UI;
-assert(T&&R&&UI,'Dependências de revisão ausentes');
+const T=world.window.FOCO_TOPICS,R=world.window.FOCO_REVIEW_NOTES,UI=world.window.FOCO_REVIEW_UI,D=world.window.FOCO_REVIEW_DEEP,DETAILS=world.window.FOCO_REVIEW_DETAILS;
+assert(T&&R&&UI&&D&&DETAILS,'Dependências de revisão aprofundada ausentes');
 const phon=R.get('Português','Fonologia — Encontros vocálicos');
 assert(phon.curated&&phon.summary.includes('Ditongo')&&phon.summary.includes('Hiato'),'Conceito fonológico ausente');
 const graph=R.get('Português','Fonologia — Dígrafos');
@@ -39,12 +39,16 @@ assert.equal(coverage['Português'].curated,3);
 for(const sub of subjects){
  const markup=UI.render({questions,subject:sub,T});
  assert(markup.includes('rv-practice:'),'Botões de prática faltando: '+sub);
- assert(markup.includes('Em poucas palavras'),'Resumo ausente: '+sub);
+ assert(markup.includes('Conceito essencial')&&markup.includes('Entenda melhor')&&markup.includes('Como resolver na prova')&&markup.includes('Exemplo comentado')&&markup.includes('Não confunda')&&markup.includes('Teste sua memória'),'Resumo detalhado ausente: '+sub);
 }
 const first=UI.render({questions,subject:'Português',T});
 assert(first.includes('Fonemas, ditongos, hiatos e dígrafos'));
 assert(first.includes('rv-real:'),'Questões reais devem ter filtro exclusivo');
 assert(first.includes('Treinar esse tópico'),'Atalho de fonologia não encontrado');
+assert(first.includes('Ditongo')&&first.includes('Hiato'),'Definições fonológicas ausentes');
+assert(first.includes('como um único fonema')||first.includes('um fonema'),'Dígrafos precisam de explicação');
+assert(first.length>12000,'Os tópicos de fonologia precisam ter profundidade real');
+assert(DETAILS.get('Português','Fonologia — Encontros vocálicos')?.worked.includes('saída'),'Exemplo específico de hiato não encontrado');
 const tags=[...first.matchAll(/data-search="([^"]+)"/g)].map(m=>m[1]);
 assert(tags.some(s=>s.includes('hiato')&&s.includes('encontros vocalicos')),'Buscar hiato deve revelar encontros vocálicos');
 const index=fs.readFileSync('index.html','utf8');
@@ -61,7 +65,7 @@ const appNode={innerHTML:'',querySelector(){return null}};
 const document={querySelector(sel){return sel==='#app'?appNode:null},querySelectorAll(){return []},addEventListener(){},title:''};
 const storage={getItem(){return null},setItem(){},removeItem(){}};
 const v2={animate(){},home(){return ''}};
-const win={FOCO_CONFIG:{},FOCO_TOPICS:T,FOCO_REVIEW_NOTES:R,FOCO_REVIEW_UI:UI,FOCO_V2:v2,FOCO_PLAN:{DEFAULT:[180,180,180,180,180,300,300]},FOCO_EXAMS:[],scrollTo(){}};
+const win={FOCO_CONFIG:{},FOCO_TOPICS:T,FOCO_REVIEW_NOTES:R,FOCO_REVIEW_DEEP:D,FOCO_REVIEW_DETAILS:DETAILS,FOCO_REVIEW_UI:UI,FOCO_V2:v2,FOCO_PLAN:{DEFAULT:[180,180,180,180,180,300,300]},FOCO_EXAMS:[],scrollTo(){}};
 const build=new Function('window','document','localStorage','sessionStorage','navigator','location','crypto','fetch','setInterval','clearInterval','console',appCode+'\nreturn {state,render,dispatch};');
 const env=build(win,document,storage,storage,{}, {protocol:'https:'},{randomUUID(){return 'review-test-uuid'}},async()=>{},()=>0,()=>{},{warn(){},error(){},log(){}});
 env.state.demo=true;env.state.user={id:'demo',app_metadata:{role:'student'}};env.state.profile={display_name:'Aluno',onboarded:true};
@@ -80,5 +84,5 @@ assert(appNode.innerHTML.includes('rv-featured')&&appNode.innerHTML.includes('Fo
  assert.equal(env.state.revisionSubject,'Inglês');
  assert.equal(env.state.screen,'revision');
  assert(appNode.innerHTML.includes('Present perfect'));
- console.log('PASS: Revisões — 5 disciplinas, fonologia, fonte jurídica, busca, PWA e prática filtrada');
+ console.log('PASS: Revisões aprofundadas — 5 disciplinas, teoria, passos, exemplos, comparação, memorização, PWA e prática filtrada');
 })().catch(e=>{console.error(e);process.exitCode=1});
