@@ -142,3 +142,21 @@ O backend PostgreSQL possui 500 questões ativas em cada disciplina: Português,
 **Contagem atual após o lote:** 3.427 questões cadastradas, 3.327 ativas. Português: 668 ativas (623 autorais + 45 referências reais); Matemática: 1.143 ativas (1.121 autorais + 22 referências reais). Total geral de referências reais: 67. Para evitar reprodução indevida de textos de prova, **essas são referências com caderno original embutido, não 67 transcrições integrais**. As questões autorais continuam em revisão. Não houve alteração em identidades, tentativas ou pontuação preexistentes.
 
 **Pendências e critérios:** buscar novas provas de concursos relacionados ao perfil da PMMG (nível médio/técnico), registrar banca, cargo, data real, caderno, gabarito **final** e anulações; classificar assuntos com revisão; oferecer, sempre que possível e autorizado, versão realmente autossuficiente com enunciado e alternativas, distinguindo-a de adaptação autoral. Normalizar nomes de tópicos antes de preencher até 50 por cada item; não aumentar a contagem por repetição mecânica.
+
+
+## Expansão real +48 e auditoria de qualidade — 09/11/2026
+
+**Estado conferido na produção:** 3.475 registros, 3.375 ativos; **115 referências reais** (74 em Português; 41 em Raciocínio Lógico-Matemático). Português tem 697 questões ativas; Matemática, 1.162. Outras disciplinas não foram ampliadas nesta etapa. As referências reais ainda exigem o caderno original de concurso e não devem ser confundidas com itens transcritos/autossuficientes.
+
+**Lotes novos:**
+
+- `supabase/real_questions_pmmg_2021_batch3.sql` — 14 questões da PMMG aplicadas em 15/08/2021, CFSd 2022 (10 de Português, 4 de Estatística); chave do simulado oficial existente.
+- `supabase/real_questions_cbmmg_2021_prova_b_batch4.sql` — 17 questões CBMMG CFSd 2022, Prova B (9 de Português, 8 de Matemática), FUNDEP, gabarito final do Ato nº 17.787/2021; anuladas 9/14/18 excluídas. Foram conferidos gabarito, classificação de PA Q15 e páginas específicas do PDF.
+- `supabase/real_questions_cbmmg_2023_prova_b_batch5.sql` — 17 questões CBMMG CFSd 2023, Prova B, IBGP, gabarito definitivo Anexo B ao Ato nº 2.065/2023 (10 Português, 7 Matemática); Q20 anulada excluída; Q16/Q18 matemática aguardam checagem de fórmula/gráfico antes de eventual inclusão.
+- `supabase/review_real_cbmmg_solutions_batch1.sql` — revisão comentada de 18 referências com cálculos aritméticos, álgebra, probabilidade, geometria, juros e gramática, sem alterar gabaritos originais nem tentativas.
+
+**Correção crítica:** 27 registros PMMG CFSd 2025 e `official-exams.js` antes apontavam para o arquivo de gabarito como se fosse prova. URLs corrigidas para o PDF do caderno original, inclusive na migração batch1. O leitor incorporado permite agora PDFs oficiais do domínio `www.bombeiros.mg.gov.br`.
+
+**Meta 50:** rótulos atuais de tópicos: 69 em Português (2 com 50 ou mais), 42 em Matemática (18 com 50 ou mais). São aproximadamente 3.704 posições abaixo de 50 por **rótulos separados**, não uma estimativa definitiva após a normalização de sinônimos. Não criar aliases novos só para inflar meta; manter IDs e histórico.
+
+**Continuação periódica:** solicitada pelo usuário e habilitada como tarefa diária. Cada execução deve verificar conexões e estado do banco antes de cadastrar algo, informar números realmente confirmados e respeitar provas/gabaritos oficiais. O planejamento detalhado está na [issue #3](https://github.com/oficial-oferta/foco-pmmg-2027/issues/3).
