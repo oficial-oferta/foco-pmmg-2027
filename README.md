@@ -201,3 +201,28 @@ Nova tela independente **Revisões rápidas**, na barra lateral e na navegação
 - Módulos novos: `review-notes.js`, `review-notes-pt-math.js`, `review-notes-language-lit.js`, `review-notes-law.js`, `review-ui.js`, `review-ui.css`. O `sw.js` passou para cache `v10` e a publicação de Pages inclui os arquivos.
 - Teste `tools/test_reviews.cjs` validando conteúdo de fonologia, telas das cinco matérias, cartões, links de fontes, integração com o app, filtro de concursos, prática do tópico, integridade do PWA e presença dos arquivos no deploy; exigido pela CI antes de publicação.
 - **Nenhuma alteração das tabelas do Supabase, progresso, XP, tentativas ou credenciais**, pois as fichas são conteúdo estático versionado no GitHub. Os exercícios continuam acessando o Supabase com RLS.
+
+
+## V8 — Revisões aprofundadas para todo o catálogo (10/11/2026)
+
+A pedido do estudante, os resumos V7 de três frases foram transformados em **guias pedagógicos detalhados**, ainda de leitura ágil no celular. Cada tópico exibe:
+1. **Conceito essencial específico** do assunto;
+2. **Entenda melhor**, com explicação da área e, quando disponível, aprofundamento próprio;
+3. **Como resolver na prova**, geralmente quatro passos práticos;
+4. **Exemplo do tópico**, associado à regra específica do banco de revisões;
+5. **Exemplo comentado**, com aplicação detalhada da técnica;
+6. **Não confunda**, para distinguir assuntos parecidos;
+7. **Pegadinha**, incluindo o alerta específico do tópico;
+8. **Teste sua memória**, com pergunta e resposta revelada só ao tocar;
+9. **Praticar questões** filtradas pelo tópico, preservando o modo separado **Só concursos** quando houver referências reais.
+
+**Cobertura verificada do Supabase ativo em 10/11/2026:** 365 rótulos, sendo 70 Português, 43 Matemática, 179 Direito e Direitos Humanos, 44 Inglês e 29 Literatura. Foram conferidos **365/365 com definição própria, guia de área, três ou mais passos, exemplo comentado e pergunta de recuperação ativa**. Texto completo dos guias tem entre **880 e 1.341 caracteres de material explicativo por tópico** na auditoria de versão (contagem somada das seções, sem incluir comandos/botões). Parte dos exemplos/metodologias é compartilhada pedagogicamente entre tópicos da mesma área, mas cada ficha mantém conceito, exemplo e alerta próprios; há **35 regras de aprofundamento adicional** para assuntos prioritários, como fonemas, ditongos, hiatos, dígrafos, crase, interpretação, porcentagens, progressões, probabilidade e garantias constitucionais.
+
+**Arquivos:**
+- [`review-deep.js`](review-deep.js): **30 guias de área** das cinco disciplinas, contendo fundamentos, passos, exemplos comentados, contraste de conceitos e recuperação ativa.
+- [`review-deep-details.js`](review-deep-details.js): **35 regras temáticas adicionais** para assuntos críticos, preservando os resumos originais.
+- `review-ui.js` e `review-ui.css`: blocos hierárquicos e legíveis em celular, com resposta oculta da pergunta de fixação.
+- [`data/review-topic-inventory.json`](data/review-topic-inventory.json): inventário de 365 rótulos gerado de `public.questions` (apenas nomes, sem dados pessoais).
+- [`tools/test_reviews.cjs`](tools/test_reviews.cjs): além de testar navegação, integração PWA e prática, verifica automaticamente **365/365 tópicos com conteúdos completos** no inventário estável. O deploy GitHub Pages exige este teste antes de publicar.
+
+**Limites editoriais:** são resumos autorais de apoio, não transcrições de provas e não substituem a leitura integral da legislação ou das obras. Os 365 rótulos contêm sobreposições; não representam 365 capítulos distintos de edital. Os conteúdos exigem manutenção quando houver novo edital e revisão pedagógica contínua; o teste garante presença/estrutura do texto, não certifica automaticamente correção de cada frase. A alteração é inteiramente no frontend GitHub (sem mutação no Supabase): IDs, questões, tentativas, XP, contas, check-ins e avanços permanecem intactos. PWA cache atualizado para **v11**.
