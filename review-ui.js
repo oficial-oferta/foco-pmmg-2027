@@ -13,8 +13,25 @@ function preview(subject,questions,T){
    })
  }));
 }
-function detail(note){
- return '<div class="rv-note"><div><b>Em poucas palavras</b><p>'+E(note.summary)+'</p></div><div><b>Exemplo para lembrar</b><p>'+E(note.example)+'</p></div><div><b>Armadilha da prova</b><p>'+E(note.trap)+'</p></div>'+(note.url?'<a class="rv-source" target="_blank" rel="noopener noreferrer" href="'+E(note.url)+'">Consultar texto oficial atualizado ↗</a>':'')+'</div>';
+function expandedNote(subject,topic,area,note){
+ const general=window.FOCO_REVIEW_DEEP.get(subject,area);
+ const precise=window.FOCO_REVIEW_DETAILS.get(subject,topic,note);
+ return {...general,...precise};
+}
+function detail(note,deep){
+ const list=(deep.steps||[]).map((step,i)=>'<li><strong>'+String(i+1).padStart(2,'0')+'</strong><span>'+E(step)+'</span></li>').join('');
+ const extra=deep.worked?'<section class="rv-lesson-part rv-lesson-worked"><h4>Exemplo comentado</h4><p>'+E(deep.worked)+'</p></section>':'';
+ const comparison=deep.contrast?'<section class="rv-lesson-part"><h4>Não confunda</h4><p>'+E(deep.contrast)+'</p></section>':'';
+ const question=deep.recall?'<details class="rv-recall"><summary>🧠 Teste sua memória: '+E(deep.recall)+' <span>Ver resposta</span></summary><div class="rv-recall-answer">'+E(deep.answer)+'</div></details>':'';
+ return '<div class="rv-note rv-note-expanded"><div class="rv-lesson-lead"><b>01 · Conceito essencial</b><p>'+E(note.summary)+'</p></div>'
+ +'<section class="rv-lesson-part"><h4>Entenda melhor</h4><p>'+E(deep.intro||'Entenda a regra em seu contexto e compare os casos que parecem semelhantes.')+'</p></section>'
+ +(list?'<section class="rv-lesson-part"><h4>Como resolver na prova</h4><ol class="rv-steps">'+list+'</ol></section>':'')
+ +'<section class="rv-lesson-part"><h4>Exemplo do tópico</h4><p>'+E(note.example)+'</p></section>'
+ +extra+comparison
+ +'<section class="rv-lesson-part rv-lesson-trap"><h4>⚠ Atenção à pegadinha</h4><p>'+E(note.trap)+'</p></section>'
+ +question
+ +(note.url?'<a class="rv-source" target="_blank" rel="noopener noreferrer" href="'+E(note.url)+'">Consultar texto oficial atualizado ↗</a>':'')
+ +'</div>';
 }
 const phonics=[
  ['Fonema e letra','Fonema é som; letra é representação gráfica. “chave” tem 5 letras e 4 fonemas.','Fonologia — Fonemas e letras'],
@@ -30,22 +47,22 @@ function render({questions,subject='Português',search='',T}){
  const allReals=questions.filter(q=>q.subject===subject&&q.origin==='real').length;
  const tabs=SUBJECTS.map(s=>'<button class="rv-tab '+(subject===s?'active':'')+'" data-action="rv-subject:'+encodeURIComponent(s)+'" aria-pressed="'+(subject===s)+'">'+E(s==='Raciocínio Lógico-Matemático'?'Matemática':s==='Direito e Direitos Humanos'?'Direito e DH':s)+'</button>').join('');
  const featured=subject==='Português'?`<section class="rv-featured">
- <div class="rv-featured-top"><div><span class="rv-highlight">COMECE POR AQUI · FONOLOGIA</span><h2>Fonemas, ditongos, hiatos e dígrafos</h2><p>Relembre em menos de 3 minutos o assunto que acabou de estudar.</p></div><button class="btn primary sm" data-action="rv-area:${encodeURIComponent('Fonologia')}">Praticar Fonologia ↗</button></div>
+ <div class="rv-featured-top"><div><span class="rv-highlight">COMECE POR AQUI · FONOLOGIA</span><h2>Fonemas, ditongos, hiatos e dígrafos</h2><p>Comece pelos conceitos e abra as explicações completas de cada tópico logo abaixo.</p></div><button class="btn primary sm" data-action="rv-area:${encodeURIComponent('Fonologia')}">Praticar Fonologia ↗</button></div>
  <div class="rv-phonics">${phonics.map(([name,desc,topic])=>`<div class="rv-phonics-item"><strong>${E(name)}</strong><p>${E(desc)}</p><button data-action="rv-practice:${encodeURIComponent(topic)}">Treinar esse tópico ↗</button></div>`).join('')}</div>
  <p class="rv-mnemonic"><b>Macete:</b> ditongo fica junto na sílaba; hiato se separa; dígrafo são duas letras para um som. Nos exercícios, conte os <b>fonemas</b>, não as letras!</p></section>`:'';
  const cats=groups.map((g,i)=>{
- const rows=g.topics.map(t=>{const id=encodeURIComponent(t.topic);return `<details class="rv-topic" data-search="${E(norm([t.topic,g.area,t.note.summary,t.note.example,t.note.trap].join(' ')))}">
- <summary><span class="rv-topic-name"><strong>${E(t.topic)}</strong><small>${t.count} questões no banco${t.real?' · '+t.real+' reais':''}${!t.note.curated?' · ficha geral':''}</small></span><span class="rv-toggle">Ler resumo ⌄</span></summary>
- <div class="rv-topic-details">${detail(t.note)}<div class="rv-actions"><button class="btn primary sm" data-action="rv-practice:${id}">Praticar ${Math.min(t.count,10)} questões</button>${t.real?`<button class="btn outline sm" data-action="rv-real:${id}">Só concursos (${t.real})</button>`:''}</div></div></details>`}).join('');
+ const rows=g.topics.map(t=>{const id=encodeURIComponent(t.topic),deep=expandedNote(subject,t.topic,g.area,t.note);return `<details class="rv-topic" data-search="${E(norm([t.topic,g.area,t.note.summary,t.note.example,t.note.trap,deep.intro||'',deep.worked||'',deep.contrast||''].join(' ')))}">
+ <summary><span class="rv-topic-name"><strong>${E(t.topic)}</strong><small>${t.count} questões no banco${t.real?' · '+t.real+' reais':''}${!t.note.curated?' · ficha geral':''}</small></span><span class="rv-toggle">Ler revisão completa ⌄</span></summary>
+ <div class="rv-topic-details">${detail(t.note,deep)}<div class="rv-actions"><button class="btn primary sm" data-action="rv-practice:${id}">Praticar ${Math.min(t.count,10)} questões</button>${t.real?`<button class="btn outline sm" data-action="rv-real:${id}">Só concursos (${t.real})</button>`:''}</div></div></details>`}).join('');
  return `<details class="rv-group" data-area="${E(norm(g.area))}" ${i===0?'open':''}><summary><span><strong>${E(g.area)}</strong><small>${g.topics.length} tópicos com revisão</small></span><span class="rv-group-caret">⌄</span></summary><div class="rv-group-rows">${rows}</div></details>`;
  }).join('');
  return `<div class="rv-layout">
- <section class="rv-hero"><div class="eyebrow">REVISÃO RÁPIDA · FOCO PMMG 2027</div><h1 class="headline">Relembre antes de praticar.</h1><p>Resumos curtos, exemplos que fixam e o erro que a banca gosta de cobrar. Abra o assunto, leia e resolva questões em seguida.</p>
+ <section class="rv-hero"><div class="eyebrow">REVISÃO RÁPIDA · FOCO PMMG 2027</div><h1 class="headline">Relembre antes de praticar.</h1><p>Explicação, método de resolução, exemplos comentados, diferenças importantes e perguntas de fixação para estudar com segurança.</p>
  <div class="rv-stats"><span><b>${count}</b> tópicos</span><span><b>${reviewed}</b> fichas específicas</span><span><b>${allReals}</b> questões reais</span></div></section>
  ${featured}
  <section class="rv-controls"><div class="rv-tabs">${tabs}</div><label class="rv-search-label" for="review-search">Buscar conteúdo</label><input id="review-search" type="search" autocomplete="off" value="${E(search)}" placeholder="Ex.: hiato, crase, probabilidade, habeas corpus..." aria-label="Buscar revisões"><p class="rv-search-count" id="rv-search-count"></p></section>
  <div class="rv-group-list">${cats||'<p>Nenhum assunto registrado ainda nesta matéria.</p>'}</div>
- <div class="rv-footer-note"><strong>Como usar:</strong> revise o conceito e o exemplo; depois toque em <b>Praticar</b>. As questões reais continuam identificadas e podem exigir a leitura do PDF original. A quantidade exibida é a disponível no banco, não uma garantia de validação editorial. A legislação deve ser confirmada na fonte atualizada.</div>
+ <div class="rv-footer-note"><strong>Como usar:</strong> leia a explicação, acompanhe o método, responda à pergunta de fixação sem olhar e depois toque em <b>Praticar</b>. As questões reais continuam identificadas e podem exigir a leitura do PDF original. A quantidade exibida é a disponível no banco, não uma garantia de validação editorial. A legislação deve ser confirmada na fonte atualizada.</div>
  </div>`;
 }
 function filter(search){
