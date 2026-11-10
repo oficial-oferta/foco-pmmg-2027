@@ -81,7 +81,7 @@ select
  'FP27-REAL-'||case when exam_id='pmmg-cfsd-2025' then 'MG25-' else 'MG23-' end||lpad(n::text,2,'0'),
  subject,topic,'real','Questão real · CRS/PMMG · caderno original',application_year,
  'QUESTÃO ORIGINAL '||n||' · CFSd PMMG '||edition||
- '. Abra o caderno original pelo link “Conferir prova de origem”, acima. Leia o enunciado e as quatro alternativas no PDF, depois escolha aqui a mesma letra (A, B, C ou D).',
+ '. Abra o caderno original pelo link “Abrir questão no PDF original”, acima. Leia o enunciado e as quatro alternativas no PDF, depois escolha aqui a mesma letra (A, B, C ou D).',
  '["Alternativa A do PDF","Alternativa B do PDF","Alternativa C do PDF","Alternativa D do PDF"]'::jsonb,
  ascii(key_letter)-ascii('A'),
  'Gabarito oficial posterior aos recursos: alternativa '||key_letter||'. '||
