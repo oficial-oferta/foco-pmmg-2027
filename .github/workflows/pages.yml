@@ -31,7 +31,7 @@ jobs:
       - name: Preparar somente frontend (nao publicar dados nem SQL)
         run: |
           mkdir -p _site/assets _site/data
-          cp index.html styles.css study-plan.css topic-catalog.css app.js v2-premium.js study-syllabus.js study-plan.js topic-catalog.js official-exams.js config.js sw.js manifest.webmanifest _site/
+          cp index.html styles.css study-plan.css topic-catalog.css review-ui.css app.js v2-premium.js study-syllabus.js study-plan.js topic-catalog.js review-notes.js review-notes-pt-math.js review-notes-language-lit.js review-notes-law.js review-ui.js official-exams.js config.js sw.js manifest.webmanifest _site/
           cp assets/icon.svg assets/sample-questions.json _site/assets/
           cp data/questions.json data/reviewed-legacy-overrides.json data/topic-extras-v1.json _site/data/
           touch _site/.nojekyll
