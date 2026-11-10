@@ -69,3 +69,13 @@
 @media(max-width:390px){.plan-streak{min-width:75px}.plan-streak small{font-size:9px}.plan-kpis span{font-size:10px}.plan-toolbar-actions{width:100%;justify-content:space-between}.plan-hero h1{font-size:25px}.plan-block{gap:6px;padding:9px 6px}.plan-check{min-width:59px;flex-basis:59px}}
 
 .plan-train-link{background:none;border:0;padding:4px 0 0;width:max-content;max-width:100%;font-size:11px;font-weight:750;color:#88d7cb;text-align:left}.plan-train-link:hover{color:#c4fff2;text-decoration:underline;transform:none!important}
+
+/* V6 — trilha de conteúdos com referência documental e revisão distribuída */
+.plan-reference{display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;margin-top:10px;font-size:11px;line-height:1.45}
+.plan-reference a{color:#92e2cf;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.plan-reference span{color:#a2bdce}
+.plan-edital-ref{font-size:10px!important;color:#b6b0e0!important;letter-spacing:.005em}
+.plan-review-pill{padding:7px 9px;display:block;border-radius:9px;background:rgba(99,177,160,.13);border:1px solid rgba(108,224,186,.3);color:#b2f2df;font-size:11px;line-height:1.45;margin-top:5px}
+.plan-review-pill span{font-size:10px;color:#92b6ac}
+.plan-block-copy>strong{font-size:12px}
+@media(max-width:450px){.plan-reference{gap:6px}.plan-review-pill{font-size:10px}}
