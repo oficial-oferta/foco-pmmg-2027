@@ -187,3 +187,17 @@ O backend PostgreSQL possui 500 questões ativas em cada disciplina: Português,
 - **Falha interceptada no QA**: três linhas do lote inicialmente tinham explicação em `difficulty` por falta de um campo de dificuldade. Registros e SQL corrigidos; 0 inconsistências remanescentes. Adicionada ao banco a restrição `questions_difficulty_vocab_check` para aceitar somente `Fácil`, `Média`, `Difícil`, `Não aferida` e impedir novas importações desse tipo. Script da proteção: [`supabase/quality/difficulty_vocabulary_guard.sql`](supabase/quality/difficulty_vocabulary_guard.sql).
 - **Limite de direitos autorais**: são referências indexadas a PDF original, não cópias integrais dos enunciados/alternativas. Dificuldades são estimativas editoriais. Preservados todos os IDs, tentativas, usuários e XP.
 - **Próximas fontes em investigação**: CFSd PMMG 2018 (verificar rigorosamente correspondência entre prova Geral/Interior e gabarito definitivo) e CBMMG CFSd 2027, aplicado em 2026 (não indexar até obter a versão do caderno e o gabarito definitivo exato). Evitar gabaritos preliminares e mudanças não verificadas. Priorizar Interpretação, Pontuação, Fonologia, Estatística, Sequências, Conjuntos, Lógica, Funções e Álgebra conforme edital PMMG.
+
+
+## V7 — Aba Revisões rápidas — 10/11/2026
+
+Nova tela independente **Revisões rápidas**, na barra lateral e na navegação inferior móvel. Não substitui **Revisar erros** (respostas erradas e questões salvas).
+
+- **365 rótulos de tópico no banco ativo**, todos com uma ficha curta específica neste lote: **70 Português, 43 Matemática, 179 Direito e Direitos Humanos, 44 Inglês, 29 Literatura**. Contagem obtida diretamente do Supabase em 10/11/2026, não é uma quantidade de capítulos independentes do edital; existem sinônimos e subdivisões editoriais. Cobertura da revisão não significa auditoria completa de cada questão.
+- Cada ficha tem **resumo direto, exemplo de fixação e armadilha comum**, com busca por tópico, filtro das cinco disciplinas e agrupamento por área do catálogo existente.
+- **Fonologia em destaque:** definições e exemplos de fonema/letra, ditongo, hiato e dígrafo, com botão para praticar a área e botões específicos para treino por tema.
+- **Praticar** usa o mesmo banco e modo misto do treino; **Só concursos** aparece quando há referências reais naquele tópico. Respeita `subject` e `topic`, limita a 10 questões ou menos se houver poucas, sem criar simulados fictícios.
+- **Direito** tem consulta às fontes primárias (CF/88 via Câmara, DUDH via ONU, CADH e LINDB via Planalto). Leis mudam: resumo não substitui texto oficial atualizado. Literatura e obras do edital 2025 são referências históricas, sujeitas à publicação do novo edital.
+- Módulos novos: `review-notes.js`, `review-notes-pt-math.js`, `review-notes-language-lit.js`, `review-notes-law.js`, `review-ui.js`, `review-ui.css`. O `sw.js` passou para cache `v10` e a publicação de Pages inclui os arquivos.
+- Teste `tools/test_reviews.cjs` validando conteúdo de fonologia, telas das cinco matérias, cartões, links de fontes, integração com o app, filtro de concursos, prática do tópico, integridade do PWA e presença dos arquivos no deploy; exigido pela CI antes de publicação.
+- **Nenhuma alteração das tabelas do Supabase, progresso, XP, tentativas ou credenciais**, pois as fichas são conteúdo estático versionado no GitHub. Os exercícios continuam acessando o Supabase com RLS.
